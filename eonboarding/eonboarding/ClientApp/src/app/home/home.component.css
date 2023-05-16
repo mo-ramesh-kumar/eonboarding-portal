@@ -1,15 +1,5 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
-.main-content {
-    margin-left: 100px;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #2D3436;
-    opacity: 0.8;
-    border-radius: 45px;
-    /* width: 70%; */
-    text-align: center;
-    margin-top: 100px;
-  }
+
   
   .welcome-section {
     text-align: center;

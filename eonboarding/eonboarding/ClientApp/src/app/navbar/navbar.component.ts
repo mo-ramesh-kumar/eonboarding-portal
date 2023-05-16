@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../services/auth.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   isLoggedIn: boolean = false;
-
-  constructor() {
+  loggedInUserEmail: string = '';
+  constructor(private AuthService: AuthService, private router:Router) {
   }
 
   ngOnInit(): void {
+    // Check if the user is already logged in
+    this.isLoggedIn = this.AuthService.isLoggedIn();
+    this.loggedInUserEmail = this.AuthService.getLoggedInUserEmail();
    var notificationBadge = document.querySelector('.notification-badge') as HTMLElement;
   var notificationCount = 0;
 
@@ -31,22 +36,17 @@ export class NavbarComponent implements OnInit {
   var notificationsLink = document.querySelector('.notifications');
   if (notificationsLink !== null) {
     notificationsLink.addEventListener('click', function(event) {
-      event.preventDefault(); // Prevent the default link behavior
-      // Add your logic here for displaying the notifications or opening a notifications panel
-      // You can call incrementNotificationCount() to increase the count when a new notification is added
-      // You can also call resetNotificationCount() to reset the count when the user clicks on the notifications link
+      event.preventDefault(); 
     });
   }
   }
 
-  login() {
-    // this.authService.login();
-    this.isLoggedIn = true;
-  }
-
   logout() {
-    // this.authService.logout();
+    this.AuthService.logout();
     this.isLoggedIn = false;
+    this.loggedInUserEmail = '';
+    // Call the logout method from the AuthService
+    this.router.navigate(['/login']); // Redirect to the login page with a query parameter for the message
   }
 
 }

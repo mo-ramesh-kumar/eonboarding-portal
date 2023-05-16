@@ -1,12 +1,4 @@
-.main-content {
-    margin-left: 200px;
-    padding: 20px;
-    background-color: #2D3436;
-    opacity: 0.8;
-    width: 50%;
-    border-radius: 45px;
-   
-  }
+
   
   .welcome-section {
     text-align: center;
@@ -24,10 +16,10 @@
     color: #777;
   }
 
-  body {
+  .main-content {
    
-      background-image: url(/src/assets/images/moback-family.jpeg);
-      background-size: cover;
+      /* background-image: url(/src/assets/images/moback-family.jpeg);
+      background-size: cover; */
       font-family: 'Montserrat', sans-serif;
       height: 100vh;
       color:#fff;

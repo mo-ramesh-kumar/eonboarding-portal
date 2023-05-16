@@ -1,5 +1,81 @@
 <nav class="sidebar">
-    <ul class="list-unstyled">
+  <ul class="list-unstyled" *ngIf="loginType==='admin'">
+    <li>
+      <a routerLink="/profile-management">
+        <i class="fas fa-user-cog"></i>
+        <span class="menu-text">Profile Management</span>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/document-review">
+        <i class="fas fa-clipboard-check"></i>
+        <span class="menu-text">Document Review</span>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/selected-candidates">
+        <i class="fas fa-check"></i>
+        <span class="menu-text">Selected Candidates</span>
+      </a>
+    </li>
+    
+    <li>
+      <a routerLink="/offer-letter-generation">
+        <i class="fas fa-file-signature"></i>
+        <span class="menu-text">Offer Letter Generation</span>
+      </a>
+    </li>
+    
+    <li>
+      <a routerLink="/faculty-approval">
+        <i class="fas fa-thumbs-up"></i>
+        <span class="menu-text">Faculty Approval</span>
+      </a>
+    </li>
+    
+    <li>
+      <a>
+        <i class="fas fa-file-alt"></i>
+        <span class="menu-text">Documents</span>
+        <i class="fas fa-chevron-down"></i>
+      </a>
+      <ul class="sub-menu">
+        <li>
+          <a href="assets/documents/Faculty Contract Agreement.pdf" target="_blank" download>
+            <i class="fas fa-file-pdf"></i>
+            <span class="sub-menu-text">Faculty Contract Agreement</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/documents/Code of Conduct.pdf" target="_blank" download>
+            <i class="fas fa-file-pdf"></i>
+            <span class="sub-menu-text">Code of Conduct</span>
+          </a>
+        </li>
+        <li>
+          <a href="assets/documents/Policies and Procedures Manual.pdf" target="_blank" download>
+            <i class="fas fa-file-pdf"></i>
+            <span class="sub-menu-text">Policies and Procedures Manual</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="/faculty-management">
+        <i class="fas fa-users-cog"></i>
+        <span class="menu-text">Faculty Management</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/about-us">
+        <i class="fas fa-home"></i>         
+        <span class="menu-text">About Us</span>
+      </a>
+    </li>
+  </ul>
+    <ul class="list-unstyled" *ngIf="loginType==='candidate'">
       <li>
         <a routerLink="/profile">
           <i class="fas fa-users"></i>
@@ -72,6 +148,12 @@
         <a routerLink="/about-us">
             <i class="fas fa-home"></i>         
           <span class="menu-text">About Us</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/company-culture">
+          <i class="fas fa-globe"></i>         
+          <span class="menu-text">Company Culture</span>
         </a>
       </li>
     </ul>

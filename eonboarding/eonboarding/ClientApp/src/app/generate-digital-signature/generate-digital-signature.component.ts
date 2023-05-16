@@ -26,8 +26,7 @@ export class GenerateDigitalSignatureComponent implements AfterViewInit {
     if (this.signaturePad && this.signaturePad.isEmpty()) {
       alert('Please provide a signature.');
     } else {
-      this.signatureDataURL = this.signaturePad.toDataURL(); // Get signature as base64 data URL
-      // Implement logic to save the signature data (send to server, store in local storage, etc.)
+      this.signatureDataURL = this.signaturePad.toDataURL(); 
       alert('Signature saved successfully!');
     }
   }
