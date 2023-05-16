@@ -1,0 +1,39 @@
+.main-content {
+    margin-left: 200px;
+    padding: 20px;
+    background-color: #2D3436;
+    opacity: 0.8;
+    width: 50%;
+    border-radius: 45px;
+  }
+  
+  .benefits-section {
+    margin-bottom: 30px;
+  }
+  
+  .benefits-section h2 {
+    font-size: 32px;
+    /* color: #333; */
+    margin-bottom: 10px;
+  }
+  
+  .benefits-section p {
+    font-size: 18px;
+    /* color: #777; */
+  }
+  
+  .benefits-section ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
+  
+  .contact-info h3 {
+    font-size: 24px;
+    /* color: #333; */
+    margin-bottom: 10px;
+  }
+  
+  .contact-info p {
+    font-size: 18px;
+    /* color: #777; */
+  }

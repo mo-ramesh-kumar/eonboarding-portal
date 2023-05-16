@@ -1,0 +1,49 @@
+
+var ftGUID_4214912="5411669743B332";
+var ftConfID_4214912="0";
+var ftParams_4214912="ftOBA=1&ft_domain=redketchup.io&ft_ifb=1&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fredketchup.io%2F&us_privacy=${US_PRIVACY}&cachebuster=655779.842173871&ft_dv=%5B%25ft_dv%25%5D";
+var ftKeyword_4214912="";
+var ftCustom_4214912="";
+var ftSection_4214912="";
+var ftSegment_4214912="";
+var ftSegmentList_4214912=[];
+var ftRuleMatch_4214912="0";
+var ftTimestamp_4214912="1683491153";
+var ftGeoC2_4214912="in";
+var ftGeoState_4214912="ka";
+var ftGeoCity_4214912="whitefield";
+var ftISP_4214912="beam telecom pvt ltd";
+var ftSpeed_4214912="broadband";
+var ftConnType_4214912="wifi";
+var ftDMA_4214912="356004";
+var ftLong_4214912="77.74";
+var ftLat_4214912="12.97";
+var ftPostal_4214912="560066";
+var ftTimeZone_4214912="+530";
+var ftMobileCarrier_4214912="";
+var ftImp4214912 = {};
+ftImp4214912.privacy = "x";
+ftImp4214912.guidAge = "194";
+ftImp4214912.impID = "ED4FE65C-2BAD-A63C-17C3-1ACCF667981A";
+ftImp4214912.duid = "FT:5411669743B332";
+
+ftImp4214912.ft_tpplid = "";
+ftImp4214912.ft_c = {};
+ftImp4214912.gdpr = "";
+ftImp4214912.gdpr_consent = "";
+ftImp4214912.gdpr_pd = "";
+ftImp4214912.oob_consent = "";
+ftImp4214912.gdprStoredConsent = "";
+ftImp4214912.us_privacy = "!!US_PRIVACY!";
+
+ftImp4214912.jsAppend = "1";
+(function(){
+    var tag = document.getElementById('ft_servedby_4214912') || (function(s){
+    	return s[s.length-1];
+    }(document.getElementsByTagName('script'))),
+           js = document.createElement('script');
+    js.src =
+"https://cdn.flashtalking.com/xre/421/4214912/3872832/js/j-4214912-3872832.js";
+    js.id = "ftscript_m4214912";
+    tag.parentNode.insertBefore(js, tag);
+}());

@@ -1,0 +1,14 @@
+<div class="navbar">
+  <a class="logo" href="#"><img src="assets/images/moback.jpeg" alt="Logo"> eOnboard</a>
+  <a class="active" href="#"><i class="fas fa-home"></i> Home</a>
+  <a class="notifications" href="#">
+    <i class="fas fa-bell"></i> Notifications
+    <span class="notification-badge">0</span>
+  </a>
+  <ng-container *ngIf="isLoggedIn; else loginOptions">
+    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </ng-container>
+  <ng-template #loginOptions>
+    <button (click)="login()">Login</button>
+  </ng-template>
+</div>

@@ -1,0 +1,34 @@
+.team-members {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .member {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #2D3436;
+    opacity: 0.8;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .member img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+  }
+  
+  .member h3 {
+    margin-top: 10px;
+    font-size: 25px;
+  }
+  
+  .member p {
+    margin-top: 5px;
+    font-size: 18px;
+  }
