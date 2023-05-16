@@ -1,0 +1,22 @@
+<div class="selected-candidates">
+    <h2>Selected Candidates</h2>
+    
+    <div *ngIf="candidates.length === 0">No candidates selected.</div>
+    
+    <ul *ngIf="candidates.length > 0">
+      <li *ngFor="let candidate of candidates">
+        <div class="candidate">
+          <div class="candidate-info">
+            <h3>{{ candidate.name }}</h3>
+            <p>Position: {{ candidate.position }}</p>
+            <p>Email: {{ candidate.email }}</p>
+          </div>
+          <div class="candidate-actions">
+            <button class="btn btn-primary" (click)="sendOfferLetter(candidate)">Send Offer Letter</button>
+            <button class="btn btn-danger" (click)="rejectCandidate(candidate)">Reject</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

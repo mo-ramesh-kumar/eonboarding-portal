@@ -1,0 +1,21 @@
+<div class="document-review">
+    <h2>Document Review</h2>
+    
+    <div *ngIf="documents.length === 0">No documents to review.</div>
+    
+    <ul *ngIf="documents.length > 0">
+      <li *ngFor="let document of documents">
+        <div class="document">
+          <div class="document-info">
+            <h3>{{ document.title }}</h3>
+            <p>Submitted by: {{ document.submittedBy }}</p>
+          </div>
+          <div class="document-actions">
+            <button class="btn btn-primary" (click)="approveDocument(document)">Approve</button>
+            <button class="btn btn-danger" (click)="rejectDocument(document)">Reject</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

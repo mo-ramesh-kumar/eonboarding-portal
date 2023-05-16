@@ -18,6 +18,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LayoutComponent } from './layout/layout.component';
+import { ProfileManagementComponent } from './profile-management/profile-management.component';
+import { DocumentReviewComponent } from './document-review/document-review.component';
+import { SelectedCandidatesComponent } from './selected-candidates/selected-candidates.component';
+import { OfferLetterGenerationComponent } from './offer-letter-generation/offer-letter-generation.component';
+import { CompanyCultureComponent } from './company-culture/company-culture.component';
+
 
 
 @NgModule({
@@ -34,14 +43,21 @@ import { FormsModule } from '@angular/forms';
     OnboardingDocumentsComponent,
     TeamMembersComponent,
     NavbarComponent,
+    LoginComponent,
+    LayoutComponent,
+    ProfileManagementComponent,
+    DocumentReviewComponent,
+    SelectedCandidatesComponent,
+    OfferLetterGenerationComponent,
+    CompanyCultureComponent,
     // LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
-    // ToastrModule.forRoot()
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
