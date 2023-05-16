@@ -1,0 +1,26 @@
+
+  
+  .welcome-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .welcome-section h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .welcome-section p {
+    font-size: 18px;
+    color: #777;
+  }
+
+  .main-content {
+   
+      /* background-image: url(/src/assets/images/moback-family.jpeg);
+      background-size: cover; */
+      font-family: 'Montserrat', sans-serif;
+      height: 100vh;
+      color:#fff;
+    }
