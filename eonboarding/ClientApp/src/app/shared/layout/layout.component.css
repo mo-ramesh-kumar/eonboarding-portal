@@ -1,0 +1,8 @@
+.main-content {
+  margin: 150px 200px 0 600px;
+  padding: 30px;
+
+  opacity: 0.8;
+  border-radius: 45px;
+  display: inline-block;
+}
