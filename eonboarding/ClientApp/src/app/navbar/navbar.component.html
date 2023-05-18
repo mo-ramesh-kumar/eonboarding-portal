@@ -9,12 +9,13 @@
     </div>
   </a>
   <a class="active" [routerLink]="['/home']"><i class="fas fa-home"></i> Home</a>
-  <a class="notifications" href="#">
+  <a class="notifications" [routerLink]="['/notification']">
     <i class="fas fa-bell"></i> Notifications
-    <span class="notification-badge">0</span>
+    <span class="notification-badge">{{ notificationCount }}</span>
   </a>
   <ng-container *ngIf="isLoggedIn">
     <span class="user-email">Logged in as: {{ loggedInUserEmail }}</span>
     <a href="#" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
   </ng-container>
 </div>
+<app-notification (notificationClosed)="handleNotificationClosed()"></app-notification>

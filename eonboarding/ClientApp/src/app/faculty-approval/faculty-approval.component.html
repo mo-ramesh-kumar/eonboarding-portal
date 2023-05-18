@@ -1,20 +1,21 @@
-<div class="faculty-approval">
-    <h2>Faculty Approval</h2>
-    <p>Please review the faculty details below and proceed with the approval:</p>
-  
-    <!-- Display faculty details here -->
-  
-    <div class="approval-buttons">
-      <button (click)="approveFaculty()" [disabled]="isApproved">Approve</button>
-      <button (click)="rejectFaculty()" [disabled]="!isApproved">Reject</button>
-    </div>
-  
-    <div *ngIf="isApproved" class="approval-message success">
-      Faculty approved successfully!
-    </div>
-  
-    <div *ngIf="!isApproved" class="approval-message error">
-      Faculty rejected.
+<div class="faculty-review">
+  <h3>Faculty Review</h3>
+  <div class="approval-stages">
+    <div class="approval-stage" *ngFor="let stage of approvalStages">
+      <span class="faculty-name">Stage: {{ stage.name }} - Faculty: {{ stage.facultyName }}</span>
+      <div class="approval-buttons">
+        <button (click)="approveFaculty(stage)" [disabled]="stage.disabled">Approve</button>
+        <button (click)="rejectFaculty(stage)" [disabled]="stage.disabled" class="reject">Reject</button>
+      </div>
+      <div class="approval-status" *ngIf="stage.approved">Approved</div>
+      <div class="approval-status" *ngIf="stage.rejected">Rejected</div>
     </div>
   </div>
-  
+
+  <div class="review-comment">
+    <label for="review">Review Comment:</label>
+    <textarea id="review" [(ngModel)]="facultyComments" placeholder="Enter review comment"></textarea>
+  </div>
+
+  <button class="save-button" (click)="saveApproval()">Save</button>
+</div>

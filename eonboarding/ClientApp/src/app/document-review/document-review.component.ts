@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class DocumentReviewComponent {
   documents = [
-    { title: 'Document 1', submittedBy: 'John Doe' },
-    { title: 'Document 2', submittedBy: 'Jane Smith' },
-    { title: 'Document 3', submittedBy: 'Bob Johnson' }
+    { title: 'Document 1', submittedBy: 'Rahul Agarwal' },
+    { title: 'Document 2', submittedBy: 'Puja Bansal' },
+    { title: 'Document 3', submittedBy: 'Pretty Seth' }
   ];
 
   approveDocument(document: any) {

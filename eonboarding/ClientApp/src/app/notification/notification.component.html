@@ -1,0 +1,6 @@
+<div class="notification-container" *ngIf="getCurrentNotification()">
+    <h3 class="notification-title">{{ getCurrentNotification().title }}</h3>
+    <p class="notification-message">{{ getCurrentNotification().message }}</p>
+    <button class="notification-action" (click)="closeNotification()">Close</button>
+  </div>
+  

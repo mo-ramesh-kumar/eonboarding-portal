@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class SelectedCandidatesComponent {
   candidates = [
-    { name: 'John Doe', position: 'Software Engineer', email: 'john.doe@example.com' },
-    { name: 'Jane Smith', position: 'UI/UX Designer', email: 'jane.smith@example.com' },
-    { name: 'Bob Johnson', position: 'Project Manager', email: 'bob.johnson@example.com' }
+    { name: 'Rahul Agarwal', position: 'Software Engineer', email: 'Rahul.Agarwal@moback.com' },
+    { name: 'Pinky', position: 'UI/UX Designer', email: 'Pinky@moback.com' },
+    { name: 'Raya', position: 'Project Manager', email: 'raya@moback.com' }
   ];
 
   sendOfferLetter(candidate: any) {
