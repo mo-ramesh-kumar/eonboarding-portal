@@ -99,3 +99,7 @@
   height: 100px;
   z-index: 99999;
 }
+
+.modal.show{
+  display: block !important;
+} 

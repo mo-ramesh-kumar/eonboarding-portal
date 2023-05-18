@@ -14,12 +14,13 @@ export class NavbarComponent implements AfterViewInit {
   @ViewChild(NotificationComponent)
   notificationComponent!: NotificationComponent;
   notificationCount: number = 0; // Number of notifications
+  showModal = false;
 
   constructor(
     private authService: AuthService,
     private router: Router,
     private changeDetectorRef: ChangeDetectorRef
-  ) {}
+  ) { }
 
   ngAfterViewInit(): void {
     // Check if the user is already logged in
@@ -33,6 +34,11 @@ export class NavbarComponent implements AfterViewInit {
     // For example, you can update a flag or perform any other actions
     this.notificationCount--;
     this.changeDetectorRef.detectChanges(); // Manually trigger change detection
+    this.showModal = false;
+  }
+
+  showNotification() {
+    this.showModal = true;
   }
 
   logout() {

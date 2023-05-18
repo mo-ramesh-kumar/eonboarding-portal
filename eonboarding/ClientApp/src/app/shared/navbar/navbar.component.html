@@ -22,25 +22,40 @@
               <div class="d-flex">
                 <span>Welcome,</span>
                 <span><a class="user-email text-primary" [routerLink]="['/profile']"> {{ loggedInUserEmail.substr(0,6)
-                    }}</a> </span>                
+                    }}</a> </span>
               </div>
             </ng-container>
-          </div>          
+          </div>
         </div>
         <div class="col-4">
           <div>
             <ng-container *ngIf="isLoggedIn">
-              <div class="d-flex">               
+              <div class="d-flex">
                 <span class="mr-2"><a href="#" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></span>
-                <a class="notifications" [routerLink]="['/notification']">
+                <a class="notifications" (click)="showNotification()">
                   <i class="fas fa-bell"></i>
                   <span class="notification-badge">{{ notificationCount }}</span>
                 </a>
               </div>
             </ng-container>
-          </div>          
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- <app-notification (notificationClosed)="handleNotificationClosed()"></app-notification> -->
+  <div class="modal" tabindex="-1" [ngClass]="{'show': showModal, 'hide': !showModal}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="handleNotificationClosed()"></button>
+        </div>
+        <div class="modal-body">
+          <app-notification (notificationClosed)="handleNotificationClosed()"></app-notification>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="handleNotificationClosed()">Close</button>        
+        </div>
+      </div>
+    </div>
+  </div>
