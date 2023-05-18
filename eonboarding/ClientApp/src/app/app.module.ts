@@ -27,6 +27,7 @@ import { SelectedCandidatesComponent } from './selected-candidates/selected-cand
 import { OfferLetterGenerationComponent } from './offer-letter-generation/offer-letter-generation.component';
 import { CompanyCultureComponent } from './company-culture/company-culture.component';
 import { FacultyApprovalComponent } from './faculty-approval/faculty-approval.component';
+import { NotificationComponent } from './notification/notification.component';
 
 
 
