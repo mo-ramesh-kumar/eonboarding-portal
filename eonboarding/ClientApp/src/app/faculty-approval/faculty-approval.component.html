@@ -1,0 +1,20 @@
+<div class="faculty-approval">
+    <h2>Faculty Approval</h2>
+    <p>Please review the faculty details below and proceed with the approval:</p>
+  
+    <!-- Display faculty details here -->
+  
+    <div class="approval-buttons">
+      <button (click)="approveFaculty()" [disabled]="isApproved">Approve</button>
+      <button (click)="rejectFaculty()" [disabled]="!isApproved">Reject</button>
+    </div>
+  
+    <div *ngIf="isApproved" class="approval-message success">
+      Faculty approved successfully!
+    </div>
+  
+    <div *ngIf="!isApproved" class="approval-message error">
+      Faculty rejected.
+    </div>
+  </div>
+  
