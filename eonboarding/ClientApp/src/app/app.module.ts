@@ -28,6 +28,7 @@ import { OfferLetterGenerationComponent } from './pages/offer-letter-generation/
 import { CompanyCultureComponent } from './components/company-culture/company-culture.component';
 import { FacultyApprovalComponent } from './components/faculty-approval/faculty-approval.component';
 import { NotificationComponent } from './shared/notification/notification.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
@@ -52,11 +53,13 @@ import { NotificationComponent } from './shared/notification/notification.compon
     OfferLetterGenerationComponent,
     CompanyCultureComponent,
     FacultyApprovalComponent,
-    NotificationComponent
+    NotificationComponent,
+    FooterComponent
     // LoginComponent
   ],
   imports: [
-    BrowserModule,
+
+  BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
