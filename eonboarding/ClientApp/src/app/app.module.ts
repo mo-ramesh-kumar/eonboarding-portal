@@ -23,14 +23,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { ProfileManagementComponent } from './pages/profile-management/profile-management.component';
 import { DocumentReviewComponent } from './components/document-review/document-review.component';
-import { SelectedCandidatesComponent } from './pages/selected-candidates/selected-candidates.component';
+import { SelectedCandidatesComponent } from './selected-candidates/selected-candidates.component';
 import { OfferLetterGenerationComponent } from './pages/offer-letter-generation/offer-letter-generation.component';
 import { CompanyCultureComponent } from './components/company-culture/company-culture.component';
 import { FacultyApprovalComponent } from './components/faculty-approval/faculty-approval.component';
 import { NotificationComponent } from './shared/notification/notification.component';
-
-
-
 
 
 @NgModule({

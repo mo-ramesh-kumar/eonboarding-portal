@@ -114,6 +114,7 @@ body {
   
   .sidebar ul.sub-menu li a:hover {
     background-color: #f1f1f1;
+    color:#000;
   }
   
   .sidebar ul.sub-menu li a i {
@@ -131,3 +132,9 @@ body {
   .sub-menu-text {
     font-size: 18px; /* Adjust the size as per your preference */
   }
+
+  .fa-chevron-down:before {
+    content: "\f078";
+    font-size: 15px;
+    margin-left: 100px;
+}

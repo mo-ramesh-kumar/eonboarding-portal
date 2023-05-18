@@ -4,9 +4,3 @@
   max-width: 800px; /* Set the maximum width for the container */
   margin: 0 auto; /* Center the container horizontally */
 }
-
-.main-content {
-  flex: 1; /* Allow the main content to expand and fill the remaining space */
-  background-color: #49657b ;
-
-}

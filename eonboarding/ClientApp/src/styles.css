@@ -1,12 +1,7 @@
-
-
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap/dist/css/bootstrap.min.css";
 
 body {
-
-  background-color:  #49657b ;
   /* background-image: linear-gradient(#EFF54D, #00AC61); */
-color: aliceblue;
-font-size: 18px;
-
+  color: rgb(249, 249, 249);
+  font-size: 18px;
 }

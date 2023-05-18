@@ -15,24 +15,32 @@
 
     </div>
     <div class="col-3">
-      <div class="row">
-        <div class="col-2">
-          <div class="float-end mt-3">
-            <a class="notifications" [routerLink]="['/notification']">
-              <i class="fas fa-bell"></i>
-              <span class="notification-badge">{{ notificationCount }}</span>
-            </a>
-            <span><a href="#" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></span>
-          </div>
+      <div class="row mt-5">
+        <div class="col-8">
+          <div>
+            <ng-container *ngIf="isLoggedIn">
+              <div class="d-flex">
+                <span>Welcome,</span>
+                <span><a class="user-email text-primary" [routerLink]="['/profile']"> {{ loggedInUserEmail.substr(0,6)
+                    }}</a> </span>                
+              </div>
+            </ng-container>
+          </div>          
         </div>
-        <div class="col-10">
-          <ng-container *ngIf="isLoggedIn">
-            Welcome <a class="user-email" [routerLink]="['/profile']"> {{ loggedInUserEmail.substr(0,6) }}</a>
-
-          </ng-container>
+        <div class="col-4">
+          <div>
+            <ng-container *ngIf="isLoggedIn">
+              <div class="d-flex">               
+                <span class="mr-2"><a href="#" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></span>
+                <a class="notifications" [routerLink]="['/notification']">
+                  <i class="fas fa-bell"></i>
+                  <span class="notification-badge">{{ notificationCount }}</span>
+                </a>
+              </div>
+            </ng-container>
+          </div>          
         </div>
       </div>
     </div>
   </div>
-</div>
-<app-notification (notificationClosed)="handleNotificationClosed()"></app-notification>
+  <!-- <app-notification (notificationClosed)="handleNotificationClosed()"></app-notification> -->

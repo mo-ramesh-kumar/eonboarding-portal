@@ -7,10 +7,14 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  loginType: string = '';
 
-  constructor(private AuthService:AuthService) { }
-  loginType = this.AuthService.getLoginType();
-  ngOnInit(): void {
+  constructor(private AuthService: AuthService) {
+
+  }
+
+  ngOnInit(): void {   
+    this.loginType = this.AuthService.getLoginType();
   }
 
 }

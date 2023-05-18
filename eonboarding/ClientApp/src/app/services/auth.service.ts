@@ -43,6 +43,7 @@ export class AuthService {
   }
 
   getLoginType(): string {
-    return this.loginType;
+    var t = JSON.parse(localStorage.getItem('token') || '');
+    return t.loginType;
   }
 }

@@ -15,7 +15,7 @@ import { AuthGuard } from './auth.guard';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { ProfileManagementComponent } from './pages/profile-management/profile-management.component';
 import { DocumentReviewComponent } from './components/document-review/document-review.component';
-import { SelectedCandidatesComponent } from './pages/selected-candidates/selected-candidates.component';
+import { SelectedCandidatesComponent } from './selected-candidates/selected-candidates.component';
 import { OfferLetterGenerationComponent } from './pages/offer-letter-generation/offer-letter-generation.component';
 import { CompanyCultureComponent } from './components/company-culture/company-culture.component';
 import { FacultyApprovalComponent } from './components/faculty-approval/faculty-approval.component';
@@ -24,39 +24,35 @@ import { NotificationComponent } from './shared/notification/notification.compon
 // import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  
+
   { path: 'login', component: LoginComponent },
-  { path: '', component: LayoutComponent, canActivate: [AuthGuard] ,
-  children: [
-    {
-      path: 'home',
-      component: HomeComponent,
-    },
-    { path: 'profile', component: ProfileComponent },
-  { path: 'documents', component: DocumentsComponent },
-  { path: 'about-us', component: AboutUsComponent },
-  { path: 'trainings', component: TrainingsComponent },
-  { path: 'benefits', component: BenefitsComponent },
-  { path: 'onboarding-documents', component: OnboardingDocumentsComponent },
-  { path: 'generate-digital-signature', component: GenerateDigitalSignatureComponent },
-  { path:'team-members', component: TeamMembersComponent},
-  { path:'profile-management', component: ProfileManagementComponent},
-  { path:'document-review', component: DocumentReviewComponent},
-  { path:'selected-candidates', component: SelectedCandidatesComponent},
-  { path:'offer-letter-generation', component: OfferLetterGenerationComponent},
-  {path: 'company-culture', component: CompanyCultureComponent},
-  { path:'faculty-approval', component: FacultyApprovalComponent},
-  { path:'notification', component: NotificationComponent},
-],
+  {
+    path: 'home',
+    component: HomeComponent,
   },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'documents', component: DocumentsComponent, canActivate: [AuthGuard] },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'trainings', component: TrainingsComponent, canActivate: [AuthGuard] },
+  { path: 'benefits', component: BenefitsComponent, canActivate: [AuthGuard] },
+  { path: 'onboarding-documents', component: OnboardingDocumentsComponent, canActivate: [AuthGuard] },
+  { path: 'generate-digital-signature', component: GenerateDigitalSignatureComponent, canActivate: [AuthGuard] },
+  { path: 'team-members', component: TeamMembersComponent },
+  { path: 'profile-management', component: ProfileManagementComponent },
+  { path: 'document-review', component: DocumentReviewComponent },
+  { path: 'selected-candidates', component: SelectedCandidatesComponent, canActivate: [AuthGuard] },
+  { path: 'offer-letter-generation', component: OfferLetterGenerationComponent, canActivate: [AuthGuard] },
+  { path: 'company-culture', component: CompanyCultureComponent, canActivate: [AuthGuard] },
+  { path: 'faculty-approval', component: FacultyApprovalComponent, canActivate: [AuthGuard] },
+  { path: 'notification', component: NotificationComponent, canActivate: [AuthGuard] },
   // { path:'login', component: LoginComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports:
+  exports:
 
- [RouterModule]
+    [RouterModule]
 })
 export class AppRoutingModule { }
