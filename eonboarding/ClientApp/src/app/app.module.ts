@@ -26,6 +26,9 @@ import { DocumentReviewComponent } from './document-review/document-review.compo
 import { SelectedCandidatesComponent } from './selected-candidates/selected-candidates.component';
 import { OfferLetterGenerationComponent } from './offer-letter-generation/offer-letter-generation.component';
 import { CompanyCultureComponent } from './company-culture/company-culture.component';
+import { FacultyApprovalComponent } from './faculty-approval/faculty-approval.component';
+
+
 
 
 
@@ -50,6 +53,7 @@ import { CompanyCultureComponent } from './company-culture/company-culture.compo
     SelectedCandidatesComponent,
     OfferLetterGenerationComponent,
     CompanyCultureComponent,
+    FacultyApprovalComponent,
     // LoginComponent
   ],
   imports: [
@@ -57,7 +61,7 @@ import { CompanyCultureComponent } from './company-culture/company-culture.compo
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

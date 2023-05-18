@@ -23,4 +23,14 @@
       font-family: 'Montserrat', sans-serif;
       height: 100vh;
       color:#fff;
+      
+    }
+    .qr-code {
+      margin-top: 30px;
+    }
+    
+    .qr-code img {
+  
+      max-width: 200px; /* Adjust the desired width */
+      height: auto;
     }

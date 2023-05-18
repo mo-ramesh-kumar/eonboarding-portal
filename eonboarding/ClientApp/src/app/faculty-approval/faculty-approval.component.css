@@ -1,0 +1,28 @@
+.faculty-approval {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .approval-buttons {
+    margin-top: 20px;
+  }
+  
+  .approval-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .success {
+    background-color: #dff0d8;
+    color: #3c763d;
+  }
+  
+  .error {
+    background-color: #f2dede;
+    color: #a94442;
+  }
+  

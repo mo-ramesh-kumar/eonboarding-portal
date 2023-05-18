@@ -1,6 +1,14 @@
-<div class="image-slider">
-    <div class="slide" *ngFor="let image of carouselImages">
-      <img [src]="image.src" [alt]="image.alt">
+<div class="main-content">
+  <div class="image-gallery">
+    <div class="image-item" *ngFor="let item of carouselImages">
+      <h3>{{ item.heading }}</h3>
+      <p>{{ item.details }}</p>
+      <div class="image-collage">
+        <img *ngFor="let image of item.images" [src]="image.src" [alt]="image.alt">
+      </div>
+      <div class="image-info">
+    
+      </div>
     </div>
   </div>
-  
+</div>

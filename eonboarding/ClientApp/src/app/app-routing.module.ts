@@ -18,6 +18,7 @@ import { DocumentReviewComponent } from './document-review/document-review.compo
 import { SelectedCandidatesComponent } from './selected-candidates/selected-candidates.component';
 import { OfferLetterGenerationComponent } from './offer-letter-generation/offer-letter-generation.component';
 import { CompanyCultureComponent } from './company-culture/company-culture.component';
+import { FacultyApprovalComponent } from './faculty-approval/faculty-approval.component';
 
 // import { LoginComponent } from './login/login.component';
 
@@ -42,8 +43,8 @@ const routes: Routes = [
   { path:'document-review', component: DocumentReviewComponent},
   { path:'selected-candidates', component: SelectedCandidatesComponent},
   { path:'offer-letter-generation', component: OfferLetterGenerationComponent},
-  {path: 'company-culture', component: CompanyCultureComponent}
-  // { path:'faculty-approval', component: facul},
+  {path: 'company-culture', component: CompanyCultureComponent},
+   { path:'faculty-approval', component: FacultyApprovalComponent},
   // { path:'faculty-management', component: ProfileManagementComponent},
 ],
   },
