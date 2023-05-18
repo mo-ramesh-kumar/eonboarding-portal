@@ -20,12 +20,12 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     // Fetch the user's profile information from the AuthService or relevant service
-    this.loggedInUserName = "Annu";
+    this.loggedInUserName = "Rahul Agarwal";
     this.loggedInUserEmail = this.authService.getLoggedInUserEmail();
     this.loggedInUserPhone = '1234567';
     this.loggedInUserAddress = '';
-    this.dateOfBirth = '19 Nov';
-    this.gender = 'Female';
+    this.dateOfBirth = '7 Jan, 1992';
+    this.gender = 'Male';
     this.nationality = 'Indian';
   }
 

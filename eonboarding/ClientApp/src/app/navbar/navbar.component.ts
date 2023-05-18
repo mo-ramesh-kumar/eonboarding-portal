@@ -1,52 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { AuthService } from './../services/auth.service';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
+import { NotificationComponent } from '../notification/notification.component';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements AfterViewInit {
   isLoggedIn: boolean = false;
   loggedInUserEmail: string = '';
-  constructor(private AuthService: AuthService, private router:Router) {
-  }
+  @ViewChild(NotificationComponent)
+  notificationComponent!: NotificationComponent;
+  notificationCount: number = 0; // Number of notifications
 
-  ngOnInit(): void {
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {}
+
+  ngAfterViewInit(): void {
     // Check if the user is already logged in
-    this.isLoggedIn = this.AuthService.isLoggedIn();
-    this.loggedInUserEmail = this.AuthService.getLoggedInUserEmail();
-   var notificationBadge = document.querySelector('.notification-badge') as HTMLElement;
-  var notificationCount = 0;
-
-  // Function to increment the notification count and update the badge
-  function incrementNotificationCount() {
-    notificationCount++;
-    notificationBadge.textContent = notificationCount.toString();
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.loggedInUserEmail = this.authService.getLoggedInUserEmail();
+    this.updateNotificationCount(); // Call the method to update the notification count
   }
 
-  // Function to reset the notification count to zero
-  function resetNotificationCount() {
-    notificationCount = 0;
-    notificationBadge.textContent = notificationCount.toString();
-  }
-
-  // Event listener for the notifications link
-  var notificationsLink = document.querySelector('.notifications');
-  if (notificationsLink !== null) {
-    notificationsLink.addEventListener('click', function(event) {
-      event.preventDefault(); 
-    });
-  }
+  handleNotificationClosed() {
+    // Logic to handle the notification being closed
+    // For example, you can update a flag or perform any other actions
+    this.notificationCount--;
+    this.changeDetectorRef.detectChanges(); // Manually trigger change detection
   }
 
   logout() {
-    this.AuthService.logout();
+    this.authService.logout();
     this.isLoggedIn = false;
     this.loggedInUserEmail = '';
     // Call the logout method from the AuthService
     this.router.navigate(['/login']); // Redirect to the login page with a query parameter for the message
   }
 
+  updateNotificationCount() {
+    this.notificationCount = this.notificationComponent.getNotificationCount();
+    this.changeDetectorRef.detectChanges(); // Manually trigger change detection
+  }
 }
