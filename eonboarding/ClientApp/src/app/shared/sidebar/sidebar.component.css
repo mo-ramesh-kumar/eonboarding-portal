@@ -1,21 +1,12 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-
-  }  
-  .wrapper {
-    display: flex;
-  }
-  
-  .sidebar {
-    position: fixed;
-    top: 100px;
-    width: 250x;
-    height: 90%;
-    background-color: #2D3436;
-    color: #fff;
-    overflow-y: auto;
-  }
+.sidebar {
+  position: fixed;
+  top: 100px;
+  width: 250px;
+  height: 90%;
+  background-color: #2D3436;
+  color: #fff;
+  overflow-y: auto;
+}
   
   .sidebar ul {
     list-style: none;
@@ -136,5 +127,5 @@ body {
   .fa-chevron-down:before {
     content: "\f078";
     font-size: 15px;
-    margin-left: 100px;
+  margin-left: 30px;;
 }
