@@ -93,3 +93,9 @@
   transform: rotate(359deg);
   margin-top: 10px;
 }
+
+.navbar{
+  display: block;
+  height: 100px;
+  z-index: 99999;
+}
