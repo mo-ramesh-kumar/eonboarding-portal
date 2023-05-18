@@ -55,6 +55,7 @@ import { NotificationComponent } from './notification/notification.component';
     OfferLetterGenerationComponent,
     CompanyCultureComponent,
     FacultyApprovalComponent,
+    NotificationComponent
     // LoginComponent
   ],
   imports: [
