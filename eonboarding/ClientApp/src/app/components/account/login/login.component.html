@@ -14,10 +14,10 @@
         <input type="email" [(ngModel)]="email" name="email" required>
       </div>
       <div *ngIf="loginType === 'admin'" class="admin-form-group">
-        <label>Admin Code:</label>
-        <input type="password" [(ngModel)]="adminCode" name="adminCode" required>
+        <label>Admin Pass Code:</label>
+        <input type="password" class="form-control" [(ngModel)]="adminCode" name="adminCode" required>
       </div>
-      <div *ngIf="!isOTPSent" class="form-group">
+      <div *ngIf="!isOTPSent && loginType !== 'admin'" class="form-group">
         <button type="button" class="btn-send-otp" (click)="handleSendOTP()">Send OTP</button>
       </div>
       <div *ngIf="isOTPSent" class="form-group">

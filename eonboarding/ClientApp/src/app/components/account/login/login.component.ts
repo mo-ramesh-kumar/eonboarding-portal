@@ -19,14 +19,14 @@ export class LoginComponent {
   generatedOTP: number = 0; // Variable to store the generated OTP
   // message: string = '';
 
-  constructor(private http: HttpClient, private router: Router, private AuthService: AuthService,  private route: ActivatedRoute) {}
+  constructor(private http: HttpClient, private router: Router, private AuthService: AuthService, private route: ActivatedRoute) { }
 
   // ngOnInit(): void {
   //   this.route.queryParams.subscribe(params => {
   //     this.message = params['message'] || '';
   //   });
   // }
-  
+
   handleSendOTP() {
     this.generatedOTP = Math.floor(Math.random() * 900000) + 100000; // Generate OTP
     console.log('OTP sent:', this.generatedOTP); // Display the generated OTP in the console
@@ -39,11 +39,11 @@ export class LoginComponent {
     if (this.loginType === 'admin') {
       const adminEmail = 'admin@example.com';
       const adminOTP = '123456';
-  
-      if (this.email === adminEmail && this.otp === adminOTP) {
+
+      if (this.email === adminEmail && this.adminCode === adminOTP) {
         console.log('Admin login successful');
         this.AuthService.login(this.email, this.loginType); // Call the login method from AuthService
-        this.router.navigate(['/home']); // Redirect to the home page on successful login
+        window.location.href = '/home'; // Redirect to the home page on successful login
       } else {
         this.error = 'Invalid admin credentials. Please try again.';
       }
@@ -65,11 +65,11 @@ export class LoginComponent {
     } else if (this.loginType === 'candidate') {
       if (this.isOTPSent && this.otp) {
         const enteredOTP = parseInt(this.otp, 10); // Parse the entered OTP as an integer
-  
+
         if (enteredOTP === this.generatedOTP) { // Compare entered OTP with generated OTP
           console.log('Candidate login successful');
           this.AuthService.login(this.email, this.loginType); // Call the login method from AuthService
-          this.router.navigate(['/home']); // Redirect to the home page on successful login
+          window.location.href = '/home'; // Redirect to the home page on successful login
         } else {
           this.error = 'Invalid OTP. Please try again.';
         }
@@ -78,5 +78,5 @@ export class LoginComponent {
       }
     }
   }
-  
+
 }

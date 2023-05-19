@@ -31,9 +31,11 @@ export class AuthService {
   isLoggedIn(): boolean {
     if (localStorage.getItem('token')) {
       const t = JSON.parse(localStorage.getItem('token') || '');
-      this.loggedInUserEmail = t.userEmail;
-      this.loginType = t.loginType;
-      return t.token;
+      if (t) {
+        this.loggedInUserEmail = t.userEmail;
+        this.loginType = t.loginType;
+        return t.token;
+      }
     }
     return false;
   }
