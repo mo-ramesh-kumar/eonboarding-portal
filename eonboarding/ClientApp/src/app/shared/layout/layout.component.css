@@ -1,12 +1,11 @@
-
 .main-content {
-  margin-left: 20%;
+  margin-left: 250px;
   margin-top: 100px;
+  margin-right: 0px;
   padding: 50px;
-  opacity: 0.8;  
   display: inline-block;
-  width: 80%;
-  background-color: #f7ffe9;
+  width: calc(100% - 250px);
+  background-color: rgba(247, 255, 233, 0.8);
   color: #000;
   height: calc(100vh - 100px);
   overflow: auto;
