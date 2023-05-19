@@ -29,6 +29,7 @@ import { CompanyCultureComponent } from './components/company-culture/company-cu
 import { FacultyApprovalComponent } from './components/faculty-approval/faculty-approval.component';
 import { NotificationComponent } from './shared/notification/notification.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     CompanyCultureComponent,
     FacultyApprovalComponent,
     NotificationComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent
     // LoginComponent
   ],
   imports: [

@@ -20,7 +20,7 @@ import { OfferLetterGenerationComponent } from './pages/offer-letter-generation/
 import { CompanyCultureComponent } from './components/company-culture/company-culture.component';
 import { FacultyApprovalComponent } from './components/faculty-approval/faculty-approval.component';
 import { NotificationComponent } from './shared/notification/notification.component';
-
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 // import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -45,13 +45,16 @@ const routes: Routes = [
   { path: 'company-culture', component: CompanyCultureComponent, canActivate: [AuthGuard] },
   { path: 'faculty-approval', component: FacultyApprovalComponent, canActivate: [AuthGuard] },
   { path: 'notification', component: NotificationComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+
   // { path:'login', component: LoginComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports:
+ 
+exports:
 
     [RouterModule]
 })
