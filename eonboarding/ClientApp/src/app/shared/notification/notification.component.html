@@ -1,6 +1,13 @@
-<div class="notification-container" *ngIf="getCurrentNotification()">
-    <h3 class="notification-title">{{ getCurrentNotification().title }}</h3>
-    <p class="notification-message">{{ getCurrentNotification().message }}</p>
-    <button class="notification-action" (click)="closeNotification()">Close</button>
+<div class="notification-container">
+  <div *ngFor="let item of notifications">
+    <ul class="list-group">
+      <li class="list-group-item mb-3 list-group-item-action">        
+        <div class="d-flex w-100 mb-3 justify-content-between">
+          <h5 class="mb-1">{{ item.title }}</h5>
+          <small>3 days ago</small>
+        </div>
+        <p class="mb-1"> {{ item.message }}</p>
+      </li>
+    </ul>
   </div>
-  
+</div>

@@ -1,5 +1,5 @@
 .notification-container {
-
+    color: #000;
     padding: 20px;
     margin-bottom: 10px;
   }
@@ -16,7 +16,7 @@
   
   .notification-action {
     background-color: #007bff;
-    color: #fff;
+    color: #000;
     padding: 8px 16px;
     border: none;
     border-radius: 4px;

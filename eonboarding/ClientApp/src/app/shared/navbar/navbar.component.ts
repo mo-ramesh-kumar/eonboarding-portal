@@ -14,12 +14,13 @@ export class NavbarComponent implements OnInit {
   @ViewChild(NotificationComponent, { static: false })
   notificationComponent!: ElementRef<NotificationComponent>;
   notificationCount: number = 0; // Number of notifications
+  showModal = false;
 
   constructor(
     private authService: AuthService,
     private router: Router,
     private changeDetectorRef: ChangeDetectorRef
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     // Check if the user is already logged in
@@ -33,6 +34,7 @@ export class NavbarComponent implements OnInit {
     // For example, you can update a flag or perform any other actions
     this.notificationCount--;
     this.changeDetectorRef.detectChanges(); // Manually trigger change detection
+    this.showModal = false;
   }
 
   logout() {
@@ -41,6 +43,7 @@ export class NavbarComponent implements OnInit {
     this.loggedInUserEmail = '';
     // Call the logout method from the AuthService
     this.router.navigate(['/login']); // Redirect to the login page with a query parameter for the message
+    this.showModal = false;
   }
 
   updateNotificationCount() {
@@ -48,5 +51,9 @@ export class NavbarComponent implements OnInit {
       this.notificationCount = this.notificationComponent.nativeElement.getNotificationCount();
       this.changeDetectorRef.detectChanges(); // Manually trigger change detection
     }
+  }
+
+  showNotification() {
+    this.showModal = true;
   }
 }

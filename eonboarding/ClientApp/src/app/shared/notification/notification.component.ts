@@ -10,7 +10,7 @@ export class NotificationComponent {
 
   notifications: { title: string, message: string }[] = [
     {
-      title: "Faculty Management Onboarding",
+      title: "Start Process",
       message: "Welcome to the Faculty Management System! Please complete the onboarding process to get started."
     },
     {
