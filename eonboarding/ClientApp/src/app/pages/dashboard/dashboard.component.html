@@ -1,0 +1,29 @@
+<div class="dashboard">
+    <h2>Dashboard</h2>
+  
+    <div *ngIf="candidates.length === 0">
+      <p>No candidates available.</p>
+    </div>
+  
+    <div *ngFor="let candidate of candidates" class="candidate-card">
+      <div class="candidate-info">
+        <h5>{{ candidate.name }}</h5>
+        <p>Position: {{ candidate.position }}</p>
+        <p>Email: {{ candidate.email }}</p>
+      </div>
+  
+      <div class="candidate-status">
+        <p>Status: {{ candidate.status }}</p>
+      </div>
+  
+      <div class="candidate-actions">
+        <button *ngIf="candidate.status === 'Selected'" class="btn btn-primary" (click)="sendOfferLetter(candidate)">Send Offer Letter</button>
+        <button *ngIf="candidate.status === 'Round 1 Telephonic'" class="btn btn-primary" (click)="scheduleRound2(candidate)">Schedule Round 2</button>
+        <button *ngIf="candidate.status === 'Round 2 Interview'" class="btn btn-primary" (click)="scheduleRound3(candidate)">Schedule Round 3</button>
+        <button *ngIf="candidate.status === 'Offer Accepted'" class="btn btn-success" disabled>Offer Accepted</button>
+        <button *ngIf="candidate.status === 'Offer Rejected'" class="btn btn-danger" disabled>Offer Rejected</button>
+        <button *ngIf="candidate.status !== 'Rejected' && candidate.status !== 'Offer Accepted' && candidate.status !== 'Offer Rejected'" class="btn btn-danger" (click)="rejectCandidate(candidate)">Reject</button>
+      </div>
+    </div>
+  </div>
+  
