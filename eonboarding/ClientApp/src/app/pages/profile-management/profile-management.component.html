@@ -1,16 +1,49 @@
 <div class="profile-management">
-    <h2>Profile Management</h2>
-    
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" id="name" class="form-control" [(ngModel)]="profile.name" />
-    </div>
-    
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" class="form-control" [(ngModel)]="profile.email" />
-    </div>
-    
-    <button class="btn btn-primary" (click)="saveProfile()">Save Profile</button>
+  <h2>Profile Management</h2>
+
+  <div class="form-group">
+    <input type="text" id="name" class="form-control" placeholder="Candidate search" [(ngModel)]="profileSearch" />
   </div>
-  
+
+  <ul class="list-group">
+    <li class="list-group-item d-flex mb-3 justify-content-between align-items-start" *ngFor="let item of profiles">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold"> {{item.name}}</div>
+        {{item.email}}
+      </div>
+      <span class="">
+        <button class="btn btn-primary" (click)="editProfile(item.id)">Edit</button>
+      </span>
+    </li>
+  </ul>
+</div>
+
+<div class="modal" tabindex="-1" [ngClass]="{'show fade': showModal, 'hide': !showModal}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Edit Profile</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          (click)="saveProfile()"></button>
+      </div>
+      <div class="modal-body">
+        <form name="profileEdit">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="name" name="name" class="form-control" [(ngModel)]="selectedProfile.name" />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" id="email" name="email" class="form-control" [(ngModel)]="selectedProfile.email" />
+          </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-bs-dismiss="modal" (click)="saveProfile()">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="saveProfile()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop show d-none" [ngClass]="{'d-block fade': showModal, 'd-none': !showModal}"></div>

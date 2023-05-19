@@ -6,16 +6,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-management.component.css']
 })
 export class ProfileManagementComponent {
-
+  profileSearch: string = "";
+  showModal = false;
+  selectedProfile: any = {};
   constructor() { }
 
-  profile: any = {
-    name: '',
-    email: ''
-  };
+  profiles: Array<any> = [{
+    name: 'Ram',
+    email: 'ram@test.com',
+    candidateId: 1
+  },
+  {
+    name: 'Ram',
+    email: 'ram@test.com',
+    id: 1
+  },
+  {
+    name: 'Ram',
+    email: 'ram@test.com',
+    id: 1
+  },
+  {
+    name: 'Ram',
+    email: 'ram@test.com',
+    id: 2
+  }];
+
+  editProfile(id: number) {
+    // Here you can implement the logic to save the profile data
+    this.showModal = true;
+    this.selectedProfile = this.profiles.find(item => item.id == id);
+  }
 
   saveProfile() {
-    // Here you can implement the logic to save the profile data
-    console.log('Profile saved:', this.profile);
+    this.showModal = false;
   }
 }
