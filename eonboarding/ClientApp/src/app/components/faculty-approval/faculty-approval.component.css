@@ -1,6 +1,6 @@
-.faculty-approval {
+.faculty-review {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0 auto; /* Added centering */
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
