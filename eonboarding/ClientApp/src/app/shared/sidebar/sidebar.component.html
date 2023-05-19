@@ -75,42 +75,26 @@
   <ul class="list-unstyled" *ngIf="loginType==='candidate'">
     <li>
       <a class="active" [routerLink]="['/home']"><i class="fas fa-home"></i> Home</a>
-    </li>    
-    <li>
-      <a routerLink="/onboarding-documents">
-        <i class="fas fa-file-alt"></i>
-        <span class="menu-text">Onboarding Documents</span>
-      </a>
     </li>
-
-    <li>
-      <a routerLink="/trainings">
-        <i class="fas fa-briefcase"></i>
-        <span class="menu-text">Trainings</span>
-      </a>
-    </li>
-
-    <li>
-      <a routerLink="/benefits">
-        <i class="fas fa-tasks"></i>
-        <span class="menu-text">Benefits</span>
-      </a>
-    </li>
-
-    <li>
-      <a routerLink="/generate-digital-signature">
-        <i class="fas fa-tasks"></i>
-        <span class="menu-text">Generate Digital Signature</span>
-      </a>
-    </li>
-
     <li>
       <a>
         <i class="fas fa-file-alt"></i>
-        <span class="menu-text">Documents</span>
+        <span class="menu-text">Document Center</span>
         <i class="fas fa-chevron-down"></i>
       </a>
       <ul class="sub-menu">
+        <li>
+          <a routerLink="/onboarding-documents">
+            <i class="fas fa-file-pdf"></i>
+            <span class="sub-menu-text">Upload Documents</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/generate-digital-signature">
+            <i class="fas fa-tasks"></i>
+            <span class="menu-text">Generate Digital Signature</span>
+          </a>
+        </li>
         <li>
           <a href="assets/documents/Employee NDA .pdf" target="_blank" download>
             <i class="fas fa-file-pdf"></i>
@@ -131,6 +115,21 @@
           </a>
         </li>
       </ul>
+
+    </li>
+
+    <li>
+      <a routerLink="/trainings">
+        <i class="fas fa-briefcase"></i>
+        <span class="menu-text">Trainings</span>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/benefits">
+        <i class="fas fa-tasks"></i>
+        <span class="menu-text">Benefits</span>
+      </a>
     </li>
     <li>
       <a routerLink="/team-members">
