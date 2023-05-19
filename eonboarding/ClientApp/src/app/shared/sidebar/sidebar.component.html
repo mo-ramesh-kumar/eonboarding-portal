@@ -1,7 +1,7 @@
 <nav class="sidebar">
   <ul class="list-unstyled" *ngIf="loginType==='admin'">
     <li>
-      <a class="active" [routerLink]="['/home']"><i class="fas fa-home"></i> Home</a>
+      <a class="active" [routerLink]="['/dashboard']"><i class="fas fa-home"></i>Dashboard</a>
     </li>
     <li>
       <a routerLink="/profile-management">
@@ -17,12 +17,12 @@
       </a>
     </li>
 
-    <li>
+    <!-- <li>
       <a routerLink="/selected-candidates">
         <i class="fas fa-check"></i>
         <span class="menu-text">Selected Candidates</span>
       </a>
-    </li>
+    </li> -->
 
     <li>
       <a routerLink="/offer-letter-generation">
