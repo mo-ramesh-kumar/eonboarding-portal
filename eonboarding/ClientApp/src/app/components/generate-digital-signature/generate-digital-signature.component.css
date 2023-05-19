@@ -15,7 +15,7 @@
   .signature-pad {
     width: 400px;
     height: 200px;
-    border: 1px solid #DFE6E9;
+    border: 1px solid #101011;
     margin-bottom: 20px;
   }
   
@@ -23,8 +23,9 @@
     padding: 10px 20px;
     background-color: #ddedec;
     color: #000;
-    border: none;
+    border: solid;
     border-radius: 4px;
+    border-color:#10101152;
     cursor: pointer;
     transition: background-color 0.3s;
   }

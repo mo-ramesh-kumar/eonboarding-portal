@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { NotificationComponent } from '../notification/notification.component';
@@ -8,21 +8,20 @@ import { NotificationComponent } from '../notification/notification.component';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements AfterViewInit {
+export class NavbarComponent implements OnInit {
   isLoggedIn: boolean = false;
   loggedInUserEmail: string = '';
-  @ViewChild(NotificationComponent)
-  notificationComponent!: NotificationComponent;
+  @ViewChild(NotificationComponent, { static: false })
+  notificationComponent!: ElementRef<NotificationComponent>;
   notificationCount: number = 0; // Number of notifications
-  showModal = false;
 
   constructor(
     private authService: AuthService,
     private router: Router,
     private changeDetectorRef: ChangeDetectorRef
-  ) { }
+  ) {}
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     // Check if the user is already logged in
     this.isLoggedIn = this.authService.isLoggedIn();
     this.loggedInUserEmail = this.authService.getLoggedInUserEmail();
@@ -34,11 +33,6 @@ export class NavbarComponent implements AfterViewInit {
     // For example, you can update a flag or perform any other actions
     this.notificationCount--;
     this.changeDetectorRef.detectChanges(); // Manually trigger change detection
-    this.showModal = false;
-  }
-
-  showNotification() {
-    this.showModal = true;
   }
 
   logout() {
@@ -50,7 +44,9 @@ export class NavbarComponent implements AfterViewInit {
   }
 
   updateNotificationCount() {
-    this.notificationCount = this.notificationComponent.getNotificationCount();
-    this.changeDetectorRef.detectChanges(); // Manually trigger change detection
+    if (this.notificationComponent && this.notificationComponent.nativeElement) {
+      this.notificationCount = this.notificationComponent.nativeElement.getNotificationCount();
+      this.changeDetectorRef.detectChanges(); // Manually trigger change detection
+    }
   }
 }
