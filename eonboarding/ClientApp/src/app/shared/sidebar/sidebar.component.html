@@ -9,42 +9,19 @@
         <span class="menu-text">Profile Management</span>
       </a>
     </li>
-
-    <li>
-      <a routerLink="/document-review">
-        <i class="fas fa-clipboard-check"></i>
-        <span class="menu-text">Document Review</span>
-      </a>
-    </li>
-
-    <!-- <li>
-      <a routerLink="/selected-candidates">
-        <i class="fas fa-check"></i>
-        <span class="menu-text">Selected Candidates</span>
-      </a>
-    </li> -->
-
-    <li>
-      <a routerLink="/offer-letter-generation">
-        <i class="fas fa-file-signature"></i>
-        <span class="menu-text">Offer Letter Generation</span>
-      </a>
-    </li>
-
-    <li>
-      <a routerLink="/faculty-approval">
-        <i class="fas fa-thumbs-up"></i>
-        <span class="menu-text">Faculty Approval</span>
-      </a>
-    </li>
-
     <li>
       <a>
         <i class="fas fa-file-alt"></i>
-        <span class="menu-text">Documents</span>
+        <span class="menu-text">Document Center</span>
         <i class="fas fa-chevron-down"></i>
       </a>
       <ul class="sub-menu">
+        <li>
+          <a routerLink="/document-review">
+            <i class="fas fa-clipboard-check"></i>
+            <span class="menu-text">Document Review</span>
+          </a>
+        </li>
         <li>
           <a href="assets/documents/Faculty Contract Agreement.pdf" target="_blank" download>
             <i class="fas fa-file-pdf"></i>
@@ -65,13 +42,39 @@
         </li>
       </ul>
     </li>
-    <li>
-      <a routerLink="/about-us">
-        <i class="fas fa-home"></i>
-        <span class="menu-text">About Us</span>
+
+
+    <!-- <li>
+      <a routerLink="/selected-candidates">
+        <i class="fas fa-check"></i>
+        <span class="menu-text">Selected Candidates</span>
       </a>
+    </li> -->
+
+    <li>
+      <a>
+        <i class="fas fa-file-alt"></i>
+        <span class="menu-text">Admin Center</span>
+        <i class="fas fa-chevron-down"></i>
+      </a>
+      <ul class="sub-menu">
+        <li>
+          <a routerLink="/offer-letter-generation">
+            <i class="fas fa-file-signature"></i>
+            <span class="menu-text">Offer Letter Generation</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/faculty-approval">
+            <i class="fas fa-thumbs-up"></i>
+            <span class="menu-text">Admin Approvals</span>
+          </a>
+        </li>       
+      </ul>
     </li>
   </ul>
+
+
   <ul class="list-unstyled" *ngIf="loginType==='candidate'">
     <li>
       <a class="active" [routerLink]="['/home']"><i class="fas fa-home"></i> Home</a>

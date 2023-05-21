@@ -1,29 +1,89 @@
 <div class="dashboard">
-    <h2>Dashboard</h2>
-  
-    <div *ngIf="candidates.length === 0">
-      <p>No candidates available.</p>
+
+  <div class="card m-3">
+    <div class="card-header">
+      <h2>Dashboard</h2>
     </div>
-  
-    <div *ngFor="let candidate of candidates" class="candidate-card">
-      <div class="candidate-info">
-        <h5>{{ candidate.name }}</h5>
-        <p>Position: {{ candidate.position }}</p>
-        <p>Email: {{ candidate.email }}</p>
-      </div>
-  
-      <div class="candidate-status">
-        <p>Status: {{ candidate.status }}</p>
-      </div>
-  
-      <div class="candidate-actions">
-        <button *ngIf="candidate.status === 'Selected'" class="btn btn-primary" (click)="sendOfferLetter(candidate)">Send Offer Letter</button>
-        <button *ngIf="candidate.status === 'Round 1 Telephonic'" class="btn btn-primary" (click)="scheduleRound2(candidate)">Schedule Round 2</button>
-        <button *ngIf="candidate.status === 'Round 2 Interview'" class="btn btn-primary" (click)="scheduleRound3(candidate)">Schedule Round 3</button>
-        <button *ngIf="candidate.status === 'Offer Accepted'" class="btn btn-success" disabled>Offer Accepted</button>
-        <button *ngIf="candidate.status === 'Offer Rejected'" class="btn btn-danger" disabled>Offer Rejected</button>
-        <button *ngIf="candidate.status !== 'Rejected' && candidate.status !== 'Offer Accepted' && candidate.status !== 'Offer Rejected'" class="btn btn-danger" (click)="rejectCandidate(candidate)">Reject</button>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-4">
+          <h5>Total Candidate - 1000</h5>
+          <div class="m-5">
+            <canvas baseChart [labels]="doughnutChartLabels" [datasets]="doughnutChartDatasets"
+              [options]="doughnutChartOptions" [legend]="true" [type]="'doughnut'">
+            </canvas>
+          </div>
+
+        </div>
+        <div class="col-4">
+          <h5>Gender Count</h5>
+          <div class="m-5">
+            <canvas baseChart [labels]="chartGenderLabels" [datasets]="chartGenderDatasets"
+              [options]="doughnutChartOptions" [legend]="true" [type]="'doughnut'">
+            </canvas>
+          </div>
+        </div>
+        <div class="col-4">
+          <h5>Experiance Level</h5>
+          <div class="m-5">
+            <canvas baseChart [labels]="chartExperianceLabels" [datasets]="chartExperianceDatasets"
+              [options]="doughnutChartOptions" [legend]="true" [type]="'doughnut'">
+            </canvas>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  
+  <div class="card m-3">
+    <div class="card-header">
+      <h2>Recent Updates</h2>
+    </div>
+    <div class="card-body">
+      <div *ngIf="candidates.length === 0">
+        <p>No candidates available.</p>
+      </div>
+
+      <div *ngFor="let candidate of candidates" class=" float-start">
+        <div class="card m-3" style="width: 20rem;">
+          <div class="card-header">
+            <div class="float-start">
+              <h5 class="card-title">
+                {{ candidate.name }}
+              </h5>
+            </div>
+            <div class="float-end">
+              <span class="badge rounded-pill bg-primary"
+                [ngClass]="getCandidateStatus(candidate)">{{candidate.status}}</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <p>Position: {{ candidate.position }}</p>
+            <p>Email: {{ candidate.email }}</p>
+
+            <div class="candidate-status">
+
+            </div>
+
+            <div class="candidate-actions">
+              <button *ngIf="candidate.status === 'Selected'" class="btn btn-primary m-2"
+                (click)="sendOfferLetter(candidate)">Send Offer Letter</button>
+              <button *ngIf="candidate.status === 'Round 1 Telephonic'" class="btn btn-primary m-2"
+                (click)="scheduleRound2(candidate)">Schedule Round 2</button>
+              <button *ngIf="candidate.status === 'Round 2 Interview'" class="btn btn-primary  m-2"
+                (click)="scheduleRound3(candidate)">Schedule Round 3</button>
+              <button *ngIf="candidate.status === 'Offer Accepted'" class="btn btn-success  m-2" disabled>Offer
+                Accepted</button>
+              <button *ngIf="candidate.status === 'Offer Rejected'" class="btn btn-danger  m-2" disabled>Offer
+                Rejected</button>
+              <button
+                *ngIf="candidate.status !== 'Rejected' && candidate.status !== 'Offer Accepted' && candidate.status !== 'Offer Rejected'"
+                class="btn btn-danger m-2" (click)="rejectCandidate(candidate)">Reject</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

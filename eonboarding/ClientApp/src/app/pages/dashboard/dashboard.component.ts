@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChartConfiguration, ChartType } from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +7,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+
+  // Doughnut
+  public doughnutChartLabels: string[] = ['Selected', 'Rejected'];
+  public doughnutChartDatasets: ChartConfiguration<'doughnut'>['data']['datasets'] = [
+    { data: [350, 450], label: 'Series A' }
+  ];
+
+  public chartGenderLabels: string[] = ['Male', 'Female'];
+  public chartGenderDatasets: ChartConfiguration<'doughnut'>['data']['datasets'] = [
+    { data: [350, 450], label: 'Series A' }
+  ];
+
+  public chartExperianceLabels: string[] = ['Fresher', '2-5Yrs', '5-10Yrs', '10-12Yrs', '12+Yrs'];
+  public chartExperianceDatasets: ChartConfiguration<'doughnut'>['data']['datasets'] = [
+    { data: [350, 450, 100, 350, 450], label: 'Series A' }
+  ];
+
+  public doughnutChartOptions: ChartConfiguration<'doughnut'>['options'] = {
+    responsive: false,
+    plugins: { legend: { position: 'bottom' } }
+  };
+
   candidates = [
     {
       name: 'Rajesh Kumar',
@@ -17,25 +40,31 @@ export class DashboardComponent {
       name: 'Priya Verma',
       position: 'Frontend Developer',
       email: 'priya.verma@example.com',
-      status: 'Round 1 Telephonic'
+      status: 'T1'
     },
     {
       name: 'Amit Sharma',
       position: 'UI Designer',
       email: 'amit.sharma@example.com',
-      status: 'Round 2 Interview'
+      status: 'T2'
+    },
+    {
+      name: 'Amit Sharma',
+      position: 'UI Designer',
+      email: 'amit.sharma@example.com',
+      status: 'HR'
     },
     {
       name: 'Sneha Patel',
       position: 'Project Manager',
       email: 'sneha.patel@example.com',
-      status: 'Offer Accepted'
+      status: 'OfferAccepted'
     },
     {
       name: 'Rahul Singh',
       position: 'QA Engineer',
       email: 'rahul.singh@example.com',
-      status: 'Offer Rejected'
+      status: 'OfferRejected'
     },
     {
       name: 'Neha Gupta',
@@ -44,6 +73,34 @@ export class DashboardComponent {
       status: 'Rejected'
     }
   ];
+
+  getCandidateStatus(candidate: any) {
+    let cssClass = "";
+    switch (candidate.status) {
+      case "T1":
+        cssClass = 'bg-blue';
+        break;
+      case "T2":
+        cssClass = 'bg-blue';
+        break;
+      case "HR":
+        cssClass = 'bg-blue';
+        break;
+      case "Selected":
+        cssClass = 'bg-success';
+        break;
+      case "OfferAccepted":
+        cssClass = 'bg-info';
+        break;
+      case "Rejected":
+        cssClass = 'bg-danger';
+        break;
+      default:
+        break;
+    }
+
+    return cssClass;
+  }
 
   sendOfferLetter(candidate: any) {
     // Logic to send the offer letter to the candidate

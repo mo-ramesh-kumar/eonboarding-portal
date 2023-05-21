@@ -19,9 +19,8 @@
         <div class="col-8">
           <div>
             <ng-container *ngIf="isLoggedIn">
-              <div class="d-flex">
-                <span>Welcome,</span>
-                <span><a class="user-email text-primary" [routerLink]="['/profile']"> {{ loggedInUserEmail.substr(0,6)
+              <div class="d-flex">                
+                <span><a class="user-email text-primary" [routerLink]="['/profile']"> {{ loggedInUserEmail
                     }}</a> </span>
               </div>
             </ng-container>

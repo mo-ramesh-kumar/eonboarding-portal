@@ -30,7 +30,7 @@ import { FacultyApprovalComponent } from './components/faculty-approval/faculty-
 import { NotificationComponent } from './shared/notification/notification.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -65,7 +65,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
