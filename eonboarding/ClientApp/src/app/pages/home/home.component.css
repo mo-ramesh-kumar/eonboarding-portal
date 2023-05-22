@@ -1,5 +1,3 @@
-
-
 /*   
   .welcome-section {
     text-align: center;
@@ -16,4 +14,11 @@
     font-size: 18px;
     text-align: center;
    */
-
+.home-content {
+  background-image: url("/assets/images/moback-bg1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
