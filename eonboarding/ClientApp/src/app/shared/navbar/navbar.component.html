@@ -1,5 +1,5 @@
 <div class="navbar">
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-2">
       <a class="logo" [routerLink]="['/home']">
         <div class="logo-container">
@@ -12,37 +12,26 @@
       </a>
     </div>
     <div class="col-7">
-
     </div>
     <div class="col-3">
-      <div class="row mt-5">
-        <div class="col-8">
-          <div>
-            <ng-container *ngIf="isLoggedIn">
-              <div class="d-flex">                
-                <span><a class="user-email text-primary" [routerLink]="['/profile']"> {{ loggedInUserEmail
-                    }}</a> </span>
-              </div>
-            </ng-container>
-          </div>
-        </div>
-        <div class="col-4">
-          <div>
-            <ng-container *ngIf="isLoggedIn">
-              <div class="d-flex">
-                <span class="mr-2"><a href="#" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></span>
-                <a class="notifications" (click)="showNotification()">
-                  <i class="fas fa-bell"></i>
-                  <span class="notification-badge">{{ notificationCount }}</span>
-                </a>
-              </div>
-            </ng-container>
-          </div>
+      <div class="row mt-3">
+        <div class="col-12 d-flex align-items-center justify-content-end">
+          <ng-container *ngIf="isLoggedIn">
+            <div class="d-flex">
+              <span><a class="user-email text-primary" [routerLink]="['/profile']">{{ loggedInUserEmail }}</a></span>
+              <a class="notifications" (click)="showNotification()">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">{{ notificationCount }}</span>
+              </a>
+              <span class="logout"><a href="#" (click)="logout()"><i class="fas fa-sign-out-alt"></i> </a></span>
+             
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>
   </div>
-  <!-- <app-notification (notificationClosed)="handleNotificationClosed()"></app-notification> -->
+</div>
 
   <div class="modal right" tabindex="-1" [ngClass]="{'show fade': showModal, 'hide': !showModal}">
     <div class="modal-dialog">
