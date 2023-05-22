@@ -1,18 +1,18 @@
-<div class="main-content">
-    <div class="benefits-section">
-      <h2>Employee Benefits</h2>
-      <p>At Moback, we offer a range of benefits to our faculty members:</p>
-      <ul>
-        <li>Healthcare coverage</li>
-        <li>Retirement plans</li>
-        <li>Flexible work schedule</li>
-        <li>Professional development opportunities</li>
-        <li>Paid time off and holidays</li>
-      </ul>
-    </div>
-    <div class="contact-info">
-      <h3>Contact Us</h3>
-      <p>Email: info@moback.com</p>
-      <p>Phone: 123-456-7890</p>
+
+  <div class="benefits-section">
+    <h2>Employee Benefits</h2>
+    <p>At Moback, we offer a range of benefits to our employees</p>
+    
+    <div class="accordion" #accordionItems>
+      <div class="accordion-item" *ngFor="let benefit of benefits">
+        <h3 class="accordion-heading" (click)="toggleAccordion(benefit)" [ngClass]="{'expanded': benefit.expanded}">
+          <span class="heading-text">{{ benefit.title }}</span>
+          <span class="toggle-icon">&#9660;</span>
+        </h3>
+        <div class="accordion-content" [ngClass]="{'show': benefit.expanded}">
+          <p>{{ benefit.description }}</p>
+        </div>
+      </div>
     </div>
   </div>
+

@@ -1,49 +1,74 @@
+.trainings-section {
+  margin-bottom: 30px;
+}
 
-  .trainings-section {
-    margin-bottom: 30px;
-  }
-  
-  .trainings-section h2 {
-    font-size: 32px;
-    /* color: #333; */
-    margin-bottom: 10px;
-  }
-  
-  .trainings-section p {
-    font-size: 18px;
-    /* color: #777; */
-  }
-  
-  .training-list {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 20px;
-  }
-  
-  .training-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .training-item i {
-    color: #4caf50;
-    font-size: 18px;
-    margin-right: 10px;
-  }
-  
-  .training-item span {
-    font-size: 18px;
-    /* color: #333; */
-  }
-  
-  .contact-info h3 {
-    font-size: 24px;
-    /* color: #333; */
-    margin-bottom: 10px;
-  }
-  
-  .contact-info p {
-    font-size: 18px;
-    /* color: #777; */
-  }
+.trainings-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.trainings-section p {
+  font-size: 18px;
+}
+
+.training-cards {
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+
+}
+
+.training-card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.training-card i {
+  color: #4caf50;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.training-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.training-card p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.contact-info h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 18px;
+}
+
+.card-blue {
+  background-color: #2196F3;
+}
+
+.card-purple {
+  background-color: #9C27B0;
+}
+
+.mark-complete-btn {
+  background-color: #0d0e0dbe;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mark-complete-btn:hover {
+  background-color: #45A049;
+}

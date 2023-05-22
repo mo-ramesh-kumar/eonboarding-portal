@@ -1,39 +1,55 @@
-/* .main-content {
-    margin-left: 200px;
-    padding: 20px;
-    background-color: #2D3436;
-    opacity: 0.8;
-    width: 50%;
-    border-radius: 45px;
-  } */
-  
-  .benefits-section {
-    margin-bottom: 30px;
-  }
-  
-  .benefits-section h2 {
-    font-size: 32px;
-    /* color: #333; */
-    margin-bottom: 10px;
-  }
-  
-  .benefits-section p {
-    font-size: 18px;
-    /* color: #777; */
-  }
-  
-  .benefits-section ul {
-    list-style: disc;
-    margin-left: 20px;
-  }
-  
-  .contact-info h3 {
-    font-size: 24px;
-    /* color: #333; */
-    margin-bottom: 10px;
-  }
-  
-  .contact-info p {
-    font-size: 18px;
-    /* color: #777; */
-  }
+.benefits-section {
+  margin-bottom: 30px;
+}
+
+.benefits-section p {
+  font-size: 18px;
+ 
+  text-align: left;
+}
+
+.accordion-item {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.accordion-item .accordion-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.accordion-item .accordion-heading:hover {
+  background-color: #e0e0e0;
+}
+
+.accordion-item .accordion-heading .heading-text {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.accordion-item .toggle-icon {
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-item.expanded .toggle-icon {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+
+}
+
+.accordion-content.show {
+  display: block;
+}
+
+
