@@ -43,7 +43,7 @@ export class LoginComponent {
       if (this.email === adminEmail && this.adminCode === adminOTP) {
         console.log('Admin login successful');
         this.AuthService.login(this.email, this.loginType); // Call the login method from AuthService
-        window.location.href = '/home'; // Redirect to the home page on successful login
+        window.location.href = '/dashboard'; // Redirect to the home page on successful login
       } else {
         this.error = 'Invalid admin credentials. Please try again.';
       }
