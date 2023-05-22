@@ -7,12 +7,12 @@ import 'jquery';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-    
-  }
+  candidate = {
+    editingProfile: true,
+    documentSubmission: false,
+    trainings: false
+  };
 
 }

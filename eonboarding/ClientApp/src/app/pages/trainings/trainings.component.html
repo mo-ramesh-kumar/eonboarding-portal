@@ -1,44 +1,54 @@
 <div>
   <h2>Trainings</h2>
 </div>
+
 <div class="trainings-section">
-  <p>Enhance your skills with our comprehensive training programs:</p>
-  <ul class="training-list">
-    <li class="training-item">
-      <i class="fa fa-check-circle"></i>
-      <span>Introduction to MOback</span>
-    </li>
-    <li class="training-item">
-      <i class="fa fa-check-circle"></i>
-      <span>Effective Communication Skills</span>
-    </li>
-    <li class="training-item">
-      <i class="fa fa-check-circle"></i>
-      <span>Leadership Development</span>
-    </li>
-    <li class="training-item">
-      <i class="fa fa-check-circle"></i>
-      <span>Project Management Basics</span>
-    </li>
-    <li class="training-item">
-      <i class="fa fa-check-circle"></i>
-      <span>JavaScript Fundamentals</span>
+  <p>Mandatory trainings to complete onboarding process</p>
+  
+  <div class="training-cards">
+    <div class="training-card card-blue">
+      <h3>Introduction to MOback</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button class="mark-complete-btn" (click)="markAsComplete('Introduction to MOback', $event)">Mark as Completed</button>
+    </div>
 
-    </li>
-    <li class="training-item">
-      <i class="fa fa-check-circle"></i>
-      <span>HTML and CSS Mastery</span>
+    <div class="training-card card-purple">
+      <h3>Effective Communication Skills</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button class="mark-complete-btn" (click)="markAsComplete('Effective Communication Skills', $event)">Mark as Completed</button>
+    </div>
 
-    </li>
-    <li class="training-item">
-      <i class="fa fa-check-circle"></i>
-      <span>Introduction to Angular</span>
+    <div class="training-card  card-blue">
+      <h3>Leadership Development</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button class="mark-complete-btn" (click)="markAsComplete('Leadership Development', $event)">Mark as Completed</button>
+    </div>
 
-    </li>
-  </ul>
-</div>
-<div class="contact-info">
-  <h3>Contact Us</h3>
-  <p>Email: info@moback.com</p>
-  <p>Phone: 123-456-7890</p>
+    <div class="training-card card-purple">
+      <h3>Project Management Basics</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button class="mark-complete-btn" (click)="markAsComplete('Project Management Basics', $event)">Mark as Completed</button>
+    </div>
+
+    <div class="training-card  card-blue">
+      <h3>Compliance Training</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button class="mark-complete-btn" (click)="markAsComplete('Compliance Training', $event)">Mark as Completed</button>
+    </div>
+
+    <div class="training-card card-purple">
+      <h3>Company Policies</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button class="mark-complete-btn" (click)="markAsComplete('Company Policies', $event)">Mark as Completed</button>
+    </div>
+
+    <div class="training-card  card-blue">
+      <h3>Security Incidents</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button class="mark-complete-btn" (click)="markAsComplete('Security Incidents', $event)">Mark as Completed</button>
+    </div>
+    
+    <!-- Add more training cards as needed -->
+
+  </div>
 </div>

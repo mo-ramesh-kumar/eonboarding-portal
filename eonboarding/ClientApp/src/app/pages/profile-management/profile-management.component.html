@@ -6,10 +6,10 @@
   </div>
 
   <ul class="list-group">
-    <li class="list-group-item d-flex mb-3 justify-content-between align-items-start" *ngFor="let item of profiles">
+    <li class="list-group-item d-flex mb-3 justify-content-between align-items-start" *ngFor="let item of filteredProfiles">
       <div class="ms-2 me-auto">
-        <div class="fw-bold"> {{item.name}}</div>
-        {{item.email}}
+        <div class="fw-bold">{{ item.name }}</div>
+        {{ item.email }}
       </div>
       <span class="">
         <button class="btn btn-primary" (click)="editProfile(item.id)">Edit</button>

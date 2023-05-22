@@ -7,6 +7,9 @@
   width: calc(100% - 300px);
   background-color: rgba(247, 255, 233, 0.8);
   color: #000;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 150px);
   overflow: auto;
+  text-align: center; /* Center align the content */
 }
+
+
