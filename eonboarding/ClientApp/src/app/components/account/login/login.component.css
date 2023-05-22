@@ -8,6 +8,9 @@
     opacity: 0.8;
     margin-top: 100px;
     color:#ccc;
+    margin-top:300px;
+
+
   }
   
   .login-container h2 {
@@ -78,4 +81,3 @@
     color: red;
     margin-top: 10px;
   }
-  

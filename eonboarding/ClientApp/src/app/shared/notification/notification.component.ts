@@ -16,9 +16,26 @@ export class NotificationComponent {
     {
       title: "Company Update",
       message: "We have exciting news to share! The company has reached a milestone this quarter."
+    },
+    {
+      title: "New Feature Released",
+      message: "We have added a new feature to enhance your experience. Check it out now!"
+    },
+    {
+      title: "Upcoming Maintenance",
+      message: "Scheduled maintenance is planned for tomorrow. Please be prepared for temporary service disruptions."
+    },
+    {
+      title: "Important Announcement",
+      message: "There will be a mandatory meeting for all employees next week. Please mark your calendars."
+    },
+    {
+      title: "Product Update",
+      message: "A new version of our product is now available. Update now to access the latest features and improvements."
     }
     // Add more notifications as needed
   ];
+  
 
   currentNotificationIndex: number = 0;
 

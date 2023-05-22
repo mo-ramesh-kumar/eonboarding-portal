@@ -41,6 +41,7 @@
 
 .navbar a.notifications {
   position: relative;
+  margin-right: 80px;
 }
 
 .navbar .notification-badge {
@@ -52,6 +53,7 @@
   padding: 3px 6px;
   border-radius: 50%;
   font-size: 12px;
+  margin-right: 10px;
 }
 
 .navbar .logo {
@@ -98,4 +100,20 @@
   display: block;
   height: 100px;
   z-index: 99999;
+}
+
+
+
+.navbar .logout {
+  margin-right: 50px; 
+}
+
+.navbar .user-email {
+  margin-right: 100px; /* Adjust the gap between user email and notification icon */
+  color: white !important; /* Set the desired color, overriding any conflicting styles */
+  text-decoration: none; /* Remove the default underline */
+}
+
+.navbar .user-email:hover {
+  color:#98ae60 !important; /* Set the hover color if needed */
 }
