@@ -17,7 +17,7 @@ import { ProfileManagementComponent } from './pages/profile-management/profile-m
 import { DocumentReviewComponent } from './components/document-review/document-review.component';
 import { SelectedCandidatesComponent } from './selected-candidates/selected-candidates.component';
 import { OfferLetterGenerationComponent } from './pages/offer-letter-generation/offer-letter-generation.component';
-import { CompanyCultureComponent } from './components/company-culture/company-culture.component';
+import { CompanyCultureComponent } from './pages/company-culture/company-culture.component';
 import { FacultyApprovalComponent } from './components/faculty-approval/faculty-approval.component';
 import { NotificationComponent } from './shared/notification/notification.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
