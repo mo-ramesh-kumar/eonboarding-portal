@@ -23,6 +23,7 @@ import { NotificationComponent } from './shared/notification/notification.compon
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { OnboardingChecklistComponent } from './pages/onboarding-checklist/onboarding-checklist.component';
 import { CandidateEnrollmentComponent } from './pages/candidate-enrollment/candidate-enrollment.component';
+import { YourApplicationComponent } from './pages/your-application/your-application.component';
 // import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'onboarding-checklist', component: OnboardingChecklistComponent, canActivate: [AuthGuard] },
   { path: 'candidate-enrollment', component: CandidateEnrollmentComponent, canActivate: [AuthGuard] },
+  { path: 'your-application', component: YourApplicationComponent, canActivate: [AuthGuard] },
   // { path:'login', component: LoginComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];

@@ -34,6 +34,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { OnboardingChecklistComponent } from './pages/onboarding-checklist/onboarding-checklist.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CandidateEnrollmentComponent } from './pages/candidate-enrollment/candidate-enrollment.component';
+import { YourApplicationComponent } from './pages/your-application/your-application.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { CandidateEnrollmentComponent } from './pages/candidate-enrollment/candi
     FooterComponent,
     DashboardComponent,
     OnboardingChecklistComponent,
-    CandidateEnrollmentComponent
+    CandidateEnrollmentComponent,
+    YourApplicationComponent
     // LoginComponent
   ],
   imports: [

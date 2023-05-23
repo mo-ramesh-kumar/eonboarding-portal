@@ -1,34 +1,5 @@
 
 
-.progress-bar {
-  margin-top: 40px;
-}
-
-.progress {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 30px;
-}
-
-.progress-step {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 30px;
-}
-
-.progress-step.completed {
-  background-color: #47c556d0;
-}
-
-.step-label {
-  margin-top: 5px;
-  color: #333;
-  font-size: 18px;
-}
-
 .btn {
   display: inline-block;
   padding: 10px 20px;
