@@ -22,6 +22,7 @@ import { FacultyApprovalComponent } from './components/faculty-approval/faculty-
 import { NotificationComponent } from './shared/notification/notification.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { OnboardingChecklistComponent } from './pages/onboarding-checklist/onboarding-checklist.component';
+import { CandidateEnrollmentComponent } from './pages/candidate-enrollment/candidate-enrollment.component';
 // import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -48,6 +49,7 @@ const routes: Routes = [
   { path: 'notification', component: NotificationComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'onboarding-checklist', component: OnboardingChecklistComponent, canActivate: [AuthGuard] },
+  { path: 'candidate-enrollment', component: CandidateEnrollmentComponent, canActivate: [AuthGuard] },
   // { path:'login', component: LoginComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
