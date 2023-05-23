@@ -123,8 +123,8 @@ p {
   color: black;
   font-weight: 700;
 }
- h2 {
-  padding: 50px; /* Add a gap below the heading */
+ h2,h1 {
+  padding: 20px; /* Add a gap below the heading */
 }
 
  p {
@@ -133,4 +133,7 @@ p {
 
  h3,h4 {
   margin-bottom: 15px; /* Add a gap below the subheadings */
+}
+h1,h2,h3,h4,h5,h6{
+  text-align: center;
 }
