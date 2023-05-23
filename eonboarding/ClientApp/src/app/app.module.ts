@@ -31,6 +31,8 @@ import { NotificationComponent } from './shared/notification/notification.compon
 import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NgChartsModule } from 'ng2-charts';
+import { OnboardingChecklistComponent } from './pages/onboarding-checklist/onboarding-checklist.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { NgChartsModule } from 'ng2-charts';
     FacultyApprovalComponent,
     NotificationComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    OnboardingChecklistComponent
     // LoginComponent
   ],
   imports: [
@@ -66,7 +69,8 @@ import { NgChartsModule } from 'ng2-charts';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    NgChartsModule 
+    NgChartsModule ,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

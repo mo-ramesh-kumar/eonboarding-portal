@@ -21,6 +21,7 @@ import { CompanyCultureComponent } from './components/company-culture/company-cu
 import { FacultyApprovalComponent } from './components/faculty-approval/faculty-approval.component';
 import { NotificationComponent } from './shared/notification/notification.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { OnboardingChecklistComponent } from './pages/onboarding-checklist/onboarding-checklist.component';
 // import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -46,7 +47,7 @@ const routes: Routes = [
   { path: 'faculty-approval', component: FacultyApprovalComponent, canActivate: [AuthGuard] },
   { path: 'notification', component: NotificationComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-
+  { path: 'onboarding-checklist', component: OnboardingChecklistComponent, canActivate: [AuthGuard] },
   // { path:'login', component: LoginComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];

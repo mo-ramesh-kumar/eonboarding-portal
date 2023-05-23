@@ -19,7 +19,7 @@
           <ng-container *ngIf="isLoggedIn">
             <div class="d-flex">
               <span><a class="user-email text-primary" [routerLink]="['/profile']">{{ loggedInUserEmail }}</a></span>
-              <a class="notifications" (click)="showNotification()">
+              <a class="notifications" (click)="open()">
                 <i class="fas fa-bell"></i>
                 <span class="notification-badge">{{ notificationCount }}</span>
               </a>
@@ -32,23 +32,3 @@
     </div>
   </div>
 </div>
-
-  <div class="modal right" tabindex="-1" [ngClass]="{'show fade': showModal, 'hide': !showModal}">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title">Notification</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-            (click)="handleNotificationClosed()"></button>
-        </div>
-        <div class="modal-body">
-          <app-notification (notificationClosed)="handleNotificationClosed()"></app-notification>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-            (click)="handleNotificationClosed()">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal-backdrop show d-none"  [ngClass]="{'d-block fade': showModal, 'd-none': !showModal}"></div>

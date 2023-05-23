@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@an
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { NotificationComponent } from '../notification/notification.component';
+import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-navbar',
@@ -13,13 +14,13 @@ export class NavbarComponent implements OnInit {
   loggedInUserEmail: string = '';
   @ViewChild(NotificationComponent, { static: false })
   notificationComponent!: ElementRef<NotificationComponent>;
-  notificationCount: number = 0; // Number of notifications
-  showModal = false;
+  notificationCount: number = 0; // Number of notifications 
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -33,8 +34,18 @@ export class NavbarComponent implements OnInit {
     // Logic to handle the notification being closed
     // For example, you can update a flag or perform any other actions
     this.notificationCount--;
-    this.changeDetectorRef.detectChanges(); // Manually trigger change detection
-    this.showModal = false;
+    this.changeDetectorRef.detectChanges(); // Manually trigger change detection   
+  }
+
+  open() {
+    this.modalService.open(NotificationComponent, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+      (result) => {
+
+      },
+      (reason) => {
+
+      },
+    );
   }
 
   logout() {
@@ -42,8 +53,7 @@ export class NavbarComponent implements OnInit {
     this.isLoggedIn = false;
     this.loggedInUserEmail = '';
     // Call the logout method from the AuthService
-    this.router.navigate(['/login']); // Redirect to the login page with a query parameter for the message
-    this.showModal = false;
+    this.router.navigate(['/login']); // Redirect to the login page with a query parameter for the message   
   }
 
   updateNotificationCount() {
@@ -51,9 +61,5 @@ export class NavbarComponent implements OnInit {
       this.notificationCount = this.notificationComponent.nativeElement.getNotificationCount();
       this.changeDetectorRef.detectChanges(); // Manually trigger change detection
     }
-  }
-
-  showNotification() {
-    this.showModal = true;
   }
 }
