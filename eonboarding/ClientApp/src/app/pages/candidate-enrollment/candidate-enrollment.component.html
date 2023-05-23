@@ -1,16 +1,135 @@
-<p>candidate-enrollment works!</p>
+<div class="container mt-5">
+    <h2>Candidate Enrollment</h2>
+    <div class="form-group text-center">
+        <label for="resume" class="resume-label">Upload Candidate's Resume:</label>
+        <div class="input-group">
+          <div class="custom-file">
+            <input type="file" id="resume" (change)="handleFileChange($event)" accept=".pdf,.doc,.docx" class="custom-file-input">
+            <label class="custom-file-label" for="resume">Choose file</label>
+          </div>
+        
+            <button class="btn btn-primary mt-3" type="button">Upload</button>
+        
+        </div>
+      </div>
+      
+      
+      
+  
+    <div *ngIf="previewResume" class="mt-4">
+      <h4>Preview</h4>
+      <iframe [src]="previewResume" width="100%" height="500px" title="Resume Preview"></iframe>
+    </div>
+  
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-custom border-success mb-3">
+          <div class="card-header card-header-custom card-header card-header-custom-custom bg-transparent border-success">Candidate Personal Details</div>
+          <div class="card-body text-success">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" [(ngModel)]="candidateDetails.name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth:</label>
+              <input type="date" id="dob" [(ngModel)]="candidateDetails.dob" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="nationality">Nationality:</label>
+              <input type="text" id="nationality" [(ngModel)]="candidateDetails.nationality" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+              <select id="gender" [(ngModel)]="candidateDetails.gender" class="form-control">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" [(ngModel)]="candidateDetails.email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" [(ngModel)]="candidateDetails.phone" class="form-control">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-custom border-success mb-3">
+            <div class="card-header card-header-custom bg-transparent border-success">Educational Background</div>
+            <div class="card-body text-success">
+                <div class="form-group">
+                    <label for="school">+2 School/College Details:</label>
+                    <input type="text" id="school" [(ngModel)]="candidateDetails.school" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="schoolPercentage">Percentage(%)</label>
+                    <input type="number" id="schoolPercentage" [(ngModel)]="candidateDetails.schoolPercentage" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="college">Graduated College Details:</label>
+                    <input type="text" id="college" [(ngModel)]="candidateDetails.college" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="collegePercentage">Percentage(%)</label>
+                    <input type="number" id="collegePercentage" [(ngModel)]="candidateDetails.collegePercentage" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="postCollege">Post-Graduation College Details:</label>
+                    <input type="text" id="postCollege" [(ngModel)]="candidateDetails.postCollege" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="postCollegePercentage">Percentage(%)</label>
+                    <input type="number" id="postCollegePercentage" [(ngModel)]="candidateDetails.postCollegePercentage" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="row" >
+      <div class="col-lg-6">
+        <div class="card card-custom border-success mb-3">
+          <div class="card-header card-header-custom bg-transparent border-success">Past Experience</div>
+          <div class="card-body text-success">
+            <div class="form-group">
+              <label for="company">Company Details:</label>
+              <input type="text" id="company" [(ngModel)]="candidateDetails.company" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="technology">Technologies Worked On:</label>
+              <input type="text" id="technology" [(ngModel)]="candidateDetails.technology" class="form-control">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-custom border-success mb-3">
+          <div class="card-header card-header-custom bg-transparent border-success">Technical Skills</div>
+          <div class="card-body text-success">
+            <div class="form-group">
+              <label for="skills">Skills:</label>
+              <textarea id="skills" [(ngModel)]="candidateDetails.skills" class="form-control"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <button (click)="handleSave()" *ngIf="previewResume" class="btn btn-primary mt-3">Save</button>
 
-1> Section Start Candidate Enrollment
-   file Upload
-
-2> Preview section
-     detail of resume 
-3> Enroll Candidate
-
-4> Show success message
-    genreate a link to navigate to profile-management
-
-5> Redirect Profile manage
-
-fileupload
-aleart
+    <div *ngIf="showPopup" class="popup alert alert-success">
+        <p>Candidate information saved successfully!</p>
+        <div class="button-container">
+          <a routerLink="/profile-management" class="btn btn-primary mr-2">Go to Profile Management</a>
+          <button (click)="closePopup()" class="btn btn-secondary">Close</button>
+        </div>
+      </div>
+      
+      
+      
+    
+  </div>
+  
