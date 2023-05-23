@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-candidate-enrollment',
@@ -29,18 +30,28 @@ export class CandidateEnrollmentComponent {
     postCollegePercentage: ''
   };
 
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(private sanitizer: DomSanitizer, private modalService: NgbModal) { }
 
   handleFileChange(event: any) {
     const file = event.target.files[0];
     this.resume = file;
     this.previewResume = this.sanitizer.bypassSecurityTrustResourceUrl(URL.createObjectURL(file));
-  
+
 
     // Resume data extraction (example only, not a complete solution)
     this.extractResumeData(file);
   }
 
+  open(content: any) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+      (result) => {
+
+      },
+      (reason) => {
+
+      },
+    );
+  }
 
   extractResumeData(file: File) {
     // Simulated resume data extraction

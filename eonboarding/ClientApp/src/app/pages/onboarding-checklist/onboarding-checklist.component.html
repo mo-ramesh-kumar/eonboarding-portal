@@ -1,1 +1,21 @@
-<p>onboarding-checklist works!</p>
+<div class="m-3">
+    <h2>Candidate Checklist</h2>
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ngb-panel *ngFor="let candidate of candidates">
+            <ng-template ngbPanelTitle>
+                {{candidate.name}}
+            </ng-template>
+            <ng-template ngbPanelContent>
+                <div *ngFor="let item of checklistOptions">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="{{item.id}}"
+                            [checked]="candidate.selectedChecklist.indexOf(item.id) >= 0" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            {{item.value}}
+                        </label>
+                    </div>
+                </div>
+            </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+</div>
