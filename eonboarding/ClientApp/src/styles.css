@@ -1,6 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
 
 * {
   box-sizing: border-box;
@@ -19,39 +19,19 @@ body {
   height: 100%;
 }
 
-h1 {
-  font-family: 'Open Sans', sans-serif;
+h1, h2, h3,h4,h5 {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-}
-
-h2 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-}
-
-h3 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-}
-
-h4 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-}
-
-h5 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-}
-
-h6 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
+  text-align: center;
+ 
+  padding: 20px;
 }
 
 p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  margin-bottom: 10px;
+
 }
 
 .modal.show {
@@ -122,18 +102,4 @@ p {
   background-color: #fafafa;
   color: black;
   font-weight: 700;
-}
- h2,h1 {
-  padding: 20px; /* Add a gap below the heading */
-}
-
- p {
-  margin-bottom: 10px; /* Add a small gap below the paragraphs */
-}
-
- h3,h4 {
-  margin-bottom: 15px; /* Add a gap below the subheadings */
-}
-h1,h2,h3,h4,h5,h6{
-  text-align: center;
 }

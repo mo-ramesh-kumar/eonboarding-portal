@@ -1,18 +1,26 @@
+<div class="benefits-section">
+  <h2>Employee Benefits</h2>
+  <p>At Moback, we offer a range of benefits to our employees</p>
 
-  <div class="benefits-section">
-    <h2>Employee Benefits</h2>
-    <p>At Moback, we offer a range of benefits to our employees</p>
-    
-    <div class="accordion" #accordionItems>
-      <div class="accordion-item" *ngFor="let benefit of benefits">
-        <h3 class="accordion-heading" (click)="toggleAccordion(benefit)" [ngClass]="{'expanded': benefit.expanded}">
-          <span class="heading-text">{{ benefit.title }}</span>
-          <span class="toggle-icon">&#9660;</span>
-        </h3>
-        <div class="accordion-content" [ngClass]="{'show': benefit.expanded}">
-          <p>{{ benefit.description }}</p>
-        </div>
+  <div class="accordion" #accordionItems>
+    <div class="accordion-item" *ngFor="let benefit of benefits" [ngClass]="{'expanded': benefit.expanded}">
+      <h3 class="accordion-heading" (click)="toggleAccordion(benefit)">
+        <span class="heading-text">{{ benefit.title }}</span>
+        <span class="toggle-icon">&#9660;</span>
+      </h3>
+      <div class="accordion-content" [ngClass]="{'show': benefit.expanded}">
+        <p [innerHTML]="getSafeDescription(benefit.description)"></p>
+        <!-- <a href="../../../assets/documents/Moback IDC - Leave, Working Hours and Holiday Policy.pdf">Healthcare Coverage PDF</a>
+        <a href="../../../assets/documents/Moback IDC - Training and Certification .pdf">Healthcare Coverage PDF</a>
+        <a href="../../../assets/documents/Moback IDC Holiday List for Year 2023.pdf">Healthcare Coverage PDF</a>
+        <a href="../../../assets/documents/Benefits manual Moback technologies 2023-24.pdf">Healthcare Coverage PDF</a>
+        <a href="../../../assets/documents/Moback IDC - Rewards & Recognition Policy.pdf">Healthcare Coverage PDF</a> -->
       </div>
     </div>
   </div>
+</div>
 
+<div class="modal" tabindex="-1" [ngClass]="{'show fade': showModal, 'hide': !showModal}">
+  <!-- Modal content here -->
+</div>
+<div class="modal-backdrop show d-none" [ngClass]="{'d-block fade': showModal, 'd-none': !showModal}"></div>

@@ -60,7 +60,7 @@
 }
 
 .mark-complete-btn {
-  background-color: #0d0e0dbe;
+  background-color: #30b230f3;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -72,3 +72,4 @@
 .mark-complete-btn:hover {
   background-color: #45A049;
 }
+
