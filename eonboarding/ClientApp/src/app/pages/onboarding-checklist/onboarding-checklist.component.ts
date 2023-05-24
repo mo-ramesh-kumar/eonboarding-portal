@@ -48,7 +48,7 @@ export class OnboardingChecklistComponent implements OnInit {
     },
     {
       id: 1,
-      name: 'Mohan',
+      name: 'Annu',
       selectedChecklist: [1, 2,3, 4]
     },
     {

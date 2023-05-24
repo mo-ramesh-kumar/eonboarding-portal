@@ -18,13 +18,13 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  background-color: #f0f0f0;
+
   padding: 10px;
   border-radius: 5px;
 }
 
 .accordion-item .accordion-heading:hover {
-  background-color: #e0e0e0;
+
 }
 
 .accordion-item .accordion-heading .heading-text {

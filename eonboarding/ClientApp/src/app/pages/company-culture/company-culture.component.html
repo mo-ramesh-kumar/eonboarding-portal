@@ -4,7 +4,9 @@
       <ngb-carousel *ngIf="item.images">
         <ng-template ngbSlide *ngFor="let image of item.images">
           <div class="picsum-img-wrapper">
-            <img [src]="image.src" [alt]="image.alt">
+            <div class="image-container">
+              <img [src]="image.src" [alt]="image.alt" class="carousel-image">
+            </div>
           </div>
           <div class="carousel-caption">
             <h3>{{ item.heading }}</h3>
