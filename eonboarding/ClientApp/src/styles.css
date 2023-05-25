@@ -19,12 +19,9 @@ body {
   height: 100%;
 }
 
-h1, h2, h3,h4,h5 {
-  font-family: 'Montserrat', sans-serif;
+h1, h2, h3,h4,h5 { 
   font-weight: 700;
-  text-align: center;
- 
-  padding: 20px;
+  padding: 10px;
 }
 
 p {
@@ -102,4 +99,8 @@ p {
   background-color: #fafafa;
   color: black;
   font-weight: 700;
+}
+
+.card-title{
+  font-weight: bold;
 }

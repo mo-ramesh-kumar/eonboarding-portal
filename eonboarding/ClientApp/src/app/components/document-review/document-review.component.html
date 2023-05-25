@@ -1,21 +1,23 @@
-<div class="document-review">
-    <h2>Document Review</h2>
-    
+<div class="card m-3">
+  <div class="card-header">
+    <div class="card-title h4">
+      Document Review
+    </div>
+  </div>
+  <div class="card-body">
     <div *ngIf="documents.length === 0">No documents to review.</div>
-    
-    <ul *ngIf="documents.length > 0">
-      <li *ngFor="let document of documents">
-        <div class="document">
-          <div class="document-info">
-            <h3>{{ document.title }}</h3>
-            <p>Submitted by: {{ document.submittedBy }}</p>
-          </div>
-          <div class="document-actions">
-            <button class="btn btn-primary" (click)="approveDocument(document)">Approve</button>
-            <button class="btn btn-danger" (click)="rejectDocument(document)">Reject</button>
-          </div>
+
+    <ul class="list-group" *ngIf="documents.length > 0">
+      <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let document of documents">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">{{ document.title }}</div>
+          Submitted by: {{ document.submittedBy }}
+        </div>
+        <div class="document-actions">
+          <button class="btn btn-primary m-2" (click)="approveDocument(document)">Approve</button>
+          <button class="btn btn-danger  m-2" (click)="rejectDocument(document)">Reject</button>
         </div>
       </li>
     </ul>
   </div>
-  
+</div>

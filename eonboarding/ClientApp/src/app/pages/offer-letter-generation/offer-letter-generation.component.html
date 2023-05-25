@@ -1,23 +1,29 @@
-
-    <div class="offer-letter-generation">
+<div class="card m-3">
+  <div class="card-header">
+    <div class="card-title h4 text-center">
       <h2>Offer Letter Generation</h2>
-    
+    </div>
+  </div>
+  <div class="card-body">
+    <form>
       <div class="form-group">
         <label for="candidateName">Candidate Name:</label>
         <input type="text" id="candidateName" [(ngModel)]="candidateName" class="form-control">
       </div>
-    
+
       <div class="form-group">
         <label for="position">Position:</label>
         <input type="text" id="position" [(ngModel)]="position" class="form-control">
       </div>
-    
+
       <div class="form-group">
         <label for="offerDetails">Offer Details:</label>
         <textarea id="offerDetails" [(ngModel)]="offerDetails" class="form-control"></textarea>
       </div>
-    
-      <button class="btn btn-primary" (click)="generateOfferLetter()">Generate and Download Offer Letter</button>
 
-    </div>
-    
+      <div class="text-center">
+        <button class="btn btn-primary" (click)="generateOfferLetter()">Generate and Download Offer Letter</button>
+      </div>
+    </form>
+  </div>
+</div>

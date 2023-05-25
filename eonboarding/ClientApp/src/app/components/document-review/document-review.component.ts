@@ -9,6 +9,12 @@ export class DocumentReviewComponent {
   documents = [
     { title: 'Document 1', submittedBy: 'Rahul Agarwal' },
     { title: 'Document 2', submittedBy: 'Puja Bansal' },
+    { title: 'Document 3', submittedBy: 'Pretty Seth' },
+    { title: 'Document 1', submittedBy: 'Rahul Agarwal' },
+    { title: 'Document 2', submittedBy: 'Puja Bansal' },
+    { title: 'Document 3', submittedBy: 'Pretty Seth' },
+    { title: 'Document 1', submittedBy: 'Rahul Agarwal' },
+    { title: 'Document 2', submittedBy: 'Puja Bansal' },
     { title: 'Document 3', submittedBy: 'Pretty Seth' }
   ];
 

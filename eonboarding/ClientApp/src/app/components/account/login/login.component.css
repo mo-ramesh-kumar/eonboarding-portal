@@ -5,12 +5,9 @@
     border: 1px solid #ccc;
     border-radius: 25px;
     background-color: #2D3436;
-    opacity: 0.8;
-    margin-top: 100px;
+    opacity: 0.8;    
     color:#ccc;
-    margin-top:300px;
-
-
+    margin-top:150px;
   }
   
   .login-container h2 {
