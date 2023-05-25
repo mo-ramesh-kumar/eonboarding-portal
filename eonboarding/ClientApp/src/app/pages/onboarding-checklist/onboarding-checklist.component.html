@@ -1,21 +1,43 @@
 <div class="m-3">
     <h2>Candidate Checklist</h2>
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-        <ngb-panel *ngFor="let candidate of candidates">
-            <ng-template ngbPanelTitle>
-                {{candidate.name}}
-            </ng-template>
-            <ng-template ngbPanelContent>
-                <div *ngFor="let item of checklistOptions">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{item.id}}"
-                            [checked]="candidate.selectedChecklist.indexOf(item.id) >= 0" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            {{item.value}}
-                        </label>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card m-3">
+                <div class="card-header">
+                    <div class="card-title h4">
+                        List of Candidate
                     </div>
                 </div>
-            </ng-template>
-        </ngb-panel>
-    </ngb-accordion>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let candidate of candidates">
+                            <a (click)="selectedCandidate = candidate">{{candidate.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card m-3">
+                <div class="card-header">
+                    <div class="card-title h4">
+                        Selected Options - {{selectedCandidate.name}}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div *ngFor="let item of checklistOptions">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="{{item.id}}"
+                                [checked]="selectedCandidate.selectedChecklist.indexOf(item.id) >= 0"
+                                id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{item.value}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

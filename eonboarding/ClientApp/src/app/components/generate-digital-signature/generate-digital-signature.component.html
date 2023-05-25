@@ -1,11 +1,21 @@
 <div>
-    <div class="signature-container">
-      <h2>Generate Digital Signature</h2>
-      <div class="signature-pad">
-        <canvas id="signatureCanvas"></canvas>
+  <div class="card m-3">
+    <div class="card-header">
+      <div class="card-title h4">
+        Generate Digital Signature
       </div>
-      <div> <button (click)="saveSignature()">Save Signature</button></div><BR>
-      <div><button (click)="downloadSignature()">Download Signature</button></div>  
-     
+    </div>
+    <div class="card-body">
+      <div class="text-center">
+        <div class="signature-pad">
+          <canvas id="signatureCanvas"></canvas>
+        </div>
+        <div class="signature-btn d-flex">
+          <button (click)="saveSignature()" class="btn btn-primary m-3">Save Signature</button>
+          <button (click)="downloadSignature()" class="btn btn-success  m-3">Download Signature</button>
+        </div>
+      </div>      
     </div>
   </div>
+
+</div>

@@ -11,7 +11,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   overflow: hidden;
-  background-image: url("/assets/images/moback-bg1.jpg");
+  /* background-image: url("/assets/images/moback-bg1.jpg"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

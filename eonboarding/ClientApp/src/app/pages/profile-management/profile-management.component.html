@@ -10,8 +10,50 @@
         {{ item.name }}
       </ng-template>
       <ng-template ngbPanelContent>
-        {{ item.email }}
-        <button class="btn btn-primary" (click)="editProfile(item.id)">Edit</button>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" [(ngModel)]="candidateDetails.name" class="form-control"
+                [disabled]="!isEditable">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" [(ngModel)]="candidateDetails.email" class="form-control"
+                [disabled]="!isEditable">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" [(ngModel)]="candidateDetails.phone" class="form-control"
+                [disabled]="!isEditable">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="dob">Date of Birth:</label>
+              <input type="date" id="dob" [(ngModel)]="candidateDetails.dob" class="form-control"
+                [disabled]="!isEditable">
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+              <select id="gender" [(ngModel)]="candidateDetails.gender" class="form-control" [disabled]="!isEditable">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="nationality">Nationality:</label>
+              <input type="text" id="nationality" [(ngModel)]="candidateDetails.nationality" class="form-control"
+                [disabled]="!isEditable">
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary m-3" *ngIf="!isEditable" (click)="editProfile(item.id)">Edit</button>
+          <button class="btn btn-primary m-3" *ngIf="isEditable" (click)="isEditable = false">Save</button>
+          <button class="btn btn-outline-primary m-3" *ngIf="isEditable" (click)="isEditable = false">Cancel</button>
+        </div>
       </ng-template>
     </ngb-panel>
   </ngb-accordion>

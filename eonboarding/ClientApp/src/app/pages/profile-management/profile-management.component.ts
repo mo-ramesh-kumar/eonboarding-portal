@@ -9,10 +9,11 @@ export class ProfileManagementComponent {
   profileSearch: string = '';
   showModal = false;
   selectedProfile: any = {};
+  isEditable = false;
 
   profiles: Array<any> = [
     {
-      name: 'Ravi Kumar',
+      name: 'Megha Chawdhary',
       email: 'ravi.kumar@test.com',
       id: 1
     },
@@ -38,6 +39,42 @@ export class ProfileManagementComponent {
     }
   ];
 
+  candidateDetails: any = {
+    name: '',
+    dob: '',
+    nationality: '',
+    gender: '',
+    email: '',
+    phone: '',
+    school: '',
+    schoolPercentage: null,
+    college: '',
+    collegePercentage: null,
+    company: '',
+    technology: '',
+    skills: '',
+    postCollege: '',
+    postCollegePercentage: ''
+  };
+
+  constructor() {
+    this.candidateDetails.name = 'Megha Chawdhary';
+    this.candidateDetails.dob = '1990-05-15';
+    this.candidateDetails.nationality = 'Indian';
+    this.candidateDetails.gender = 'female';
+    this.candidateDetails.email = 'megha.chawdhary@mail.com';
+    this.candidateDetails.phone = '8668699664';
+    this.candidateDetails.school = 'ABC School';
+    this.candidateDetails.schoolPercentage = 80;
+    this.candidateDetails.college = 'XYZ College';
+    this.candidateDetails.collegePercentage = 85;
+    this.candidateDetails.company = 'XYZ Inc.';
+    this.candidateDetails.technology = 'Angular, React, Node.js';
+    this.candidateDetails.skills = 'JavaScript, HTML, CSS';
+    this.candidateDetails.postCollege = 'Sastra University';
+    this.candidateDetails.postCollegePercentage = 80;
+  }
+
   get filteredProfiles(): Array<any> {
     if (!this.profileSearch) {
       return this.profiles;
@@ -50,7 +87,7 @@ export class ProfileManagementComponent {
   }
 
   editProfile(id: number) {
-    this.showModal = true;
+    this.isEditable = true;
     this.selectedProfile = { ...this.profiles.find((item) => item.id === id) };
   }
 

@@ -35,6 +35,8 @@ export class OnboardingChecklistComponent implements OnInit {
     }
   ]
 
+
+
   candidates = [
     {
       id: 1,
@@ -44,17 +46,42 @@ export class OnboardingChecklistComponent implements OnInit {
     {
       id: 1,
       name: 'Ramesh',
-      selectedChecklist: [1, 2,3]
+      selectedChecklist: [1, 2, 3]
     },
     {
       id: 1,
       name: 'Annu',
-      selectedChecklist: [1, 2,3, 4]
+      selectedChecklist: [1, 2, 3, 4]
     },
     {
       id: 1,
       name: 'Ankit',
-      selectedChecklist: [1, 2,3]
+      selectedChecklist: [1, 2, 3]
+    },
+    {
+      id: 1,
+      name: 'Rupesh',
+      selectedChecklist: [1]
+    },
+    {
+      id: 1,
+      name: 'Rajesh',
+      selectedChecklist: [1, 2]
+    },
+    {
+      id: 1,
+      name: 'Ramesh',
+      selectedChecklist: [1, 2, 3]
+    },
+    {
+      id: 1,
+      name: 'Annu',
+      selectedChecklist: [1, 2, 3, 4]
+    },
+    {
+      id: 1,
+      name: 'Ankit',
+      selectedChecklist: [1, 2, 3]
     },
     {
       id: 1,
@@ -62,6 +89,9 @@ export class OnboardingChecklistComponent implements OnInit {
       selectedChecklist: [1]
     }
   ]
+
+  selectedCandidate: any = this.candidates[0];
+
   constructor() { }
 
   ngOnInit(): void {
