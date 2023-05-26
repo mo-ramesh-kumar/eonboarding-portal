@@ -1,170 +1,43 @@
 <nav class="sidebar">
   <ul class="list-unstyled" *ngIf="loginType==='admin'">
-    <li>
-      <a class="active" [routerLink]="['/dashboard']"><i class="fas fa-home"></i>Dashboard</a>
-    </li>
-    <li>
-      <a routerLink="/profile-management">
-        <i class="fas fa-user-cog"></i>
-        <span class="menu-text">Profile Management</span>
-      </a>
-    </li>
-    <li>
-      <a routerLink="/onboarding-checklist">
-        <i class="fas fa-list-check"></i>
-        <span class="menu-text">Onboarding Checklist</span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <i class="fas fa-file-alt"></i>
-        <span class="menu-text">Document Center</span>
-        <i class="fas fa-chevron-down"></i>
+    <li *ngFor="let item of adminNavItems" [ngClass]="{'active' : item.isSelected}">
+      <a [routerLink]="[item.url]" (click)="setNavSelection(item)">
+        <i class="{{getIcon(item)}}"></i>
+        <span class="menu-text">{{item.title}}</span>
+        <i class="fas fa-chevron-down" *ngIf="item.subItems.length"></i>
       </a>
       <ul class="sub-menu">
-        <li>
-          <a href="assets/documents/Faculty Contract Agreement.pdf" target="_blank" download>
-            <i class="fas fa-file-pdf"></i>
+        <li *ngFor="let subitem of item.subItems">
+          <a [routerLink]="subitem.url" (click)="setNavSelection(subitem)" target="_blank" *ngIf="!subitem.isLink">
+            <i class="{{getIcon(item)}}"></i>
+            <span class="sub-menu-text">Faculty Contract Agreement</span>
+          </a>
+          <a [href]="subitem.url" (click)="setNavSelection(subitem)" target="_blank" *ngIf="subitem.isLink" download>
+            <i class="{{getIcon(item)}}"></i>
             <span class="sub-menu-text">Faculty Contract Agreement</span>
           </a>
         </li>
-        <li>
-          <a href="assets/documents/Code of Conduct.pdf" target="_blank" download>
-            <i class="fas fa-file-pdf"></i>
-            <span class="sub-menu-text">Code of Conduct</span>
-          </a>
-        </li>
-        <li>
-          <a href="assets/documents/Policies and Procedures Manual.pdf" target="_blank" download>
-            <i class="fas fa-file-pdf"></i>
-            <span class="sub-menu-text">Policies and Procedures Manual</span>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-
-    <!-- <li>
-      <a routerLink="/selected-candidates">
-        <i class="fas fa-check"></i>
-        <span class="menu-text">Selected Candidates</span>
-      </a>
-    </li> -->
-
-    <li>
-      <a>
-        <i class="fas fa-file-alt"></i>
-        <span class="menu-text">Admin Center</span>
-        <i class="fas fa-chevron-down"></i>
-      </a>
-      <ul class="sub-menu">
-        <li>
-          <a routerLink="/candidate-enrollment">
-            <i class="fas fa-user-cog"></i>
-            <span class="menu-text">Candidate Enrollment</span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="/document-review">
-            <i class="fas fa-clipboard-check"></i>
-            <span class="menu-text">Document Review</span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="/offer-letter-generation">
-            <i class="fas fa-file-signature"></i>
-            <span class="menu-text">Offer Letter Generation</span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="/faculty-approval">
-            <i class="fas fa-thumbs-up"></i>
-            <span class="menu-text">Admin Approvals</span>
-          </a>
-        </li>
       </ul>
     </li>
   </ul>
-
-
   <ul class="list-unstyled" *ngIf="loginType==='candidate'">
-    <li>
-      <a class="active" [routerLink]="['/home']"><i class="fas fa-home"></i> Home</a>
-    </li>
-    <li>
-      <a class="active" [routerLink]="['/your-application']"><i class="fas fa-file-edit"></i> Your Application</a>
-    </li>
-    <li>
-      <a>
-        <i class="fas fa-file-alt"></i>
-        <span class="menu-text">Document Center</span>
-        <i class="fas fa-chevron-down"></i>
+    <li *ngFor="let item of candidateNavItems" [ngClass]="{'active' : item.isSelected}">
+      <a [routerLink]="item.url" (click)="setNavSelection(item)" >
+        <i class="{{getIcon(item)}}"></i>
+        <span class="menu-text">{{item.title}}</span>
       </a>
       <ul class="sub-menu">
-        <li>
-          <a routerLink="/onboarding-documents">
-            <i class="fas fa-file-pdf"></i>
-            <span class="sub-menu-text">Upload Documents</span>
+        <li *ngFor="let subitem in item.subItems">
+          <a [routerLink]="subitem.url" (click)="setNavSelection(subitem)" target="_blank" download *ngIf="!subitem.isLink">
+            <i class="{{getIcon(item)}}"></i>
+            <span class="sub-menu-text">Faculty Contract Agreement</span>
           </a>
-        </li>
-        <li>
-          <a routerLink="/generate-digital-signature">
-            <i class="fas fa-tasks"></i>
-            <span class="menu-text">Generate Digital Signature</span>
-          </a>
-        </li>
-        <li>
-          <a href="assets/documents/Employee NDA .pdf" target="_blank" download>
-            <i class="fas fa-file-pdf"></i>
-            <span class="sub-menu-text">Employee NDA</span>
-          </a>
-        </li>
-        <li>
-          <a href="assets/documents/Moback IDC - Leave, Working Hours and Holiday Policy - 13th April 2021.pdf"
-            target="_blank" download>
-            <i class="fas fa-file-pdf"></i>
-            <span class="sub-menu-text">Leave Policy and Holiday</span>
-          </a>
-        </li>
-        <li>
-          <a href="assets/documents/Moback-IDC-Employee-HandBook-R2.0.pdf" target="_blank" download>
-            <i class="fas fa-file-pdf"></i>
-            <span class="sub-menu-text">Employee Handbook</span>
+          <a [href]="subitem.url" (click)="setNavSelection(subitem)" target="_blank" download *ngIf="subitem.isLink" download>
+            <i class="{{getIcon(item)}}"></i>
+            <span class="sub-menu-text">Faculty Contract Agreement</span>
           </a>
         </li>
       </ul>
-
-    </li>
-
-    <li>
-      <a routerLink="/trainings">
-        <i class="fas fa-briefcase"></i>
-        <span class="menu-text">Trainings</span>
-      </a>
-    </li>
-
-    <li>
-      <a routerLink="/benefits">
-        <i class="fas fa-tasks"></i>
-        <span class="menu-text">Benefits</span>
-      </a>
-    </li>
-    <!-- <li>
-      <a routerLink="/team-members">
-        <i class="fas fa-users"></i>
-        <span class="menu-text">Meet Our Team</span>
-      </a>
-    </li> -->
-    <li>
-      <a routerLink="/about-us">
-        <i class="fas fa-home"></i>
-        <span class="menu-text">About Us</span>
-      </a>
-    </li>
-    <li>
-      <a routerLink="/company-culture">
-        <i class="fas fa-globe"></i>
-        <span class="menu-text">Company Culture</span>
-      </a>
     </li>
   </ul>
+</nav>
