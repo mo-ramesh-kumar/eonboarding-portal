@@ -1,0 +1,12 @@
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\bin\Debug\net6.0\eonboarding.Models.deps.json
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\bin\Debug\net6.0\eonboarding.Models.dll
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\bin\Debug\net6.0\eonboarding.Models.pdb
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\obj\Debug\net6.0\eonboarding.Models.csproj.AssemblyReference.cache
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\obj\Debug\net6.0\eonboarding.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\obj\Debug\net6.0\eonboarding.Models.AssemblyInfoInputs.cache
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\obj\Debug\net6.0\eonboarding.Models.AssemblyInfo.cs
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\obj\Debug\net6.0\eonboarding.Models.csproj.CoreCompileInputs.cache
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\obj\Debug\net6.0\eonboarding.Models.dll
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\obj\Debug\net6.0\refint\eonboarding.Models.dll
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\obj\Debug\net6.0\eonboarding.Models.pdb
+D:\Moback\Hackathon\eonboarding-portal\eonboarding.Models\obj\Debug\net6.0\ref\eonboarding.Models.dll
