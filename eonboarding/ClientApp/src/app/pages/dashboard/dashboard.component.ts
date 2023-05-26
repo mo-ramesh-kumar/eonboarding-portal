@@ -31,48 +31,59 @@ export class DashboardComponent {
 
   candidates = [
     {
+      id:1,
       name: 'Rajesh Kumar',
       position: 'Software Engineer',
       email: 'rajesh.kumar@example.com',
       status: 'Selected'
     },
     {
+      id:1,
       name: 'Priya Verma',
       position: 'Frontend Developer',
       email: 'priya.verma@example.com',
       status: 'T1'
     },
     {
+      id:1,
       name: 'Amit Sharma',
       position: 'UI Designer',
       email: 'amit.sharma@example.com',
       status: 'T2'
     },
     {
+      id:1,
       name: 'Amit Sharma',
       position: 'UI Designer',
       email: 'amit.sharma@example.com',
       status: 'HR'
     },
     {
+      id:1,
       name: 'Sneha Patel',
       position: 'Project Manager',
       email: 'sneha.patel@example.com',
       status: 'OfferAccepted'
     },
     {
+      id:1,
       name: 'Rahul Singh',
       position: 'QA Engineer',
       email: 'rahul.singh@example.com',
       status: 'OfferRejected'
     },
     {
+      id:1,
       name: 'Neha Gupta',
       position: 'Data Analyst',
       email: 'neha.gupta@example.com',
       status: 'Rejected'
     }
   ];
+
+  viewProfile(candidate: any) {
+      
+  }
 
   getCandidateStatus(candidate: any) {
     let cssClass = "";

@@ -2,7 +2,7 @@
   position: fixed;
   top: 100px;
   width: 300px;
-  height: 90%;
+  height: 75%;
   background-color: #2d3436;
   color: #fff;
   overflow-y: auto;
@@ -51,9 +51,6 @@ button:hover {
 .sidebar ul.sub-menu li {
   border-bottom: none;
   padding: 5px;
-}
-
-.sidebar ul.sub-menu li a {
 }
 
 .sidebar ul.sub-menu {

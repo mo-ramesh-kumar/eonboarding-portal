@@ -23,6 +23,8 @@ public partial class EonboardingContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+    public virtual DbSet<Interview> Interviews { get; set; }
+
     public virtual DbSet<WorkExperience> WorkExperiences { get; set; }
 
 //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

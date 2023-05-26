@@ -223,8 +223,8 @@ export class SidebarComponent implements OnInit {
           order: 0,
         },
         {
-          title: 'Admin Approvals',
-          url: '/admin-approvals',
+          title: 'Profile review',
+          url: '/profile-review',
           isSelected: false,
           isLink: false,
           css: 'fas fa-thumbs-up',

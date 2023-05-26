@@ -64,8 +64,8 @@
 
             </div>
 
-            <div class="candidate-actions">
-              <button *ngIf="candidate.status === 'Selected'" class="btn btn-primary m-2"
+            <div class="candidate-actions text-center">
+              <!-- <button *ngIf="candidate.status === 'Selected'" class="btn btn-primary m-2"
                 (click)="sendOfferLetter(candidate)">Send Offer Letter</button>
               <button *ngIf="candidate.status === 'Round 1 Telephonic'" class="btn btn-primary m-2"
                 (click)="scheduleRound2(candidate)">Schedule Round 2</button>
@@ -77,7 +77,8 @@
                 Rejected</button>
               <button
                 *ngIf="candidate.status !== 'Rejected' && candidate.status !== 'Offer Accepted' && candidate.status !== 'Offer Rejected'"
-                class="btn btn-danger m-2" (click)="rejectCandidate(candidate)">Reject</button>
+                class="btn btn-danger m-2" (click)="rejectCandidate(candidate)">Reject</button> -->
+              <button class="btn btn-primary m-2" [routerLink]="['/profile-review']"  [queryParams]="{candidateId: candidate.id}">View</button>
             </div>
           </div>
         </div>

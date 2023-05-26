@@ -46,7 +46,7 @@ const routes: Routes = [
   { path: 'selected-candidates', component: SelectedCandidatesComponent, canActivate: [AuthGuard] },
   { path: 'offer-letter-generation', component: OfferLetterGenerationComponent, canActivate: [AuthGuard] },
   { path: 'company-culture', component: CompanyCultureComponent, canActivate: [AuthGuard] },
-  { path: 'faculty-approval', component: FacultyApprovalComponent, canActivate: [AuthGuard] },
+  { path: 'profile-review', component: FacultyApprovalComponent, canActivate: [AuthGuard] },
   { path: 'notification', component: NotificationComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'onboarding-checklist', component: OnboardingChecklistComponent, canActivate: [AuthGuard] },
@@ -55,7 +55,7 @@ const routes: Routes = [
   // { path:'login', component: LoginComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
-
+  
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
  

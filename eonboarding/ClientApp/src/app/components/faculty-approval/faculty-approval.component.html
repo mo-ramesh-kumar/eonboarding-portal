@@ -1,21 +1,92 @@
 <div class="faculty-review">
-  <h2>Faculty Review</h2>
-  <div class="approval-stages">
-    <div class="approval-stage" *ngFor="let stage of approvalStages">
-      <span class="faculty-name">Stage: {{ stage.name }} - Faculty: {{ stage.facultyName }}</span>
-      <div class="approval-buttons">
-        <button (click)="approveFaculty(stage)" [disabled]="stage.disabled">Approve</button>
-        <button (click)="rejectFaculty(stage)" [disabled]="stage.disabled" class="reject">Reject</button>
-      </div>
-      <div class="approval-status" *ngIf="stage.approved">Approved</div>
-      <div class="approval-status" *ngIf="stage.rejected">Rejected</div>
+  <div class="row m-3">
+    <div class="col-6">
+      <label>Candidate Name : </label>
+      <span>Ramesh</span>
+    </div>
+    <div class="col-6">
+      <label>Position : </label>
+      <span>Senior Dev</span>
     </div>
   </div>
-
-  <div class="review-comment">
-    <label for="review">Review Comment:</label>
-    <textarea id="review" [(ngModel)]="facultyComments" placeholder="Enter review comment"></textarea>
+  <div class="card m-3">
+    <div class="card-header h4">
+      Screening round
+    </div>
+    <div class="card-body">
+      <div class="row m-3">
+        <div class="col-6">
+          <label>Done by : </label>
+          <span>Ramesh</span>
+        </div>
+        <div class="col-6">
+          <label>Date : </label>
+          <span>31-12-2022</span>
+        </div>
+        <div class="form-group mt-3">
+          <label for="review">Review Comment:</label>
+          <textarea id="review" class="form-control" placeholder="Enter review comment"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-center">
+      <button class="btn btn-primary">Submit Review</button>
+    </div>
   </div>
-
-  <button class="save-button" (click)="saveApproval()">Save</button>
+  <div class="card m-3">
+    <div class="card-header h4">
+      Technical Round 1
+    </div>
+    <div class="card-body">
+      <div class="form-group mt-3">
+        <label for="review">Review Comment:</label>
+        <textarea id="review" class="form-control" placeholder="Enter review comment"></textarea>
+      </div>
+    </div>
+    <div class="card-footer text-center">
+      <button class="btn btn-primary">Submit Review</button>
+    </div>
+  </div>
+  <div class="card m-3">
+    <div class="card-header h4">
+      Technical Round 2
+    </div>
+    <div class="card-body">
+      <div class="form-group mt-3">
+        <label for="review">Review Comment:</label>
+        <textarea id="review" class="form-control" placeholder="Enter review comment"></textarea>
+      </div>
+    </div>
+    <div class="card-footer text-center">
+      <button class="btn btn-primary">Submit Review</button>
+    </div>
+  </div>
+  <div class="card m-3">
+    <div class="card-header h4">
+      Managerial Round
+    </div>
+    <div class="card-body">
+      <div class="form-group mt-3">
+        <label for="review">Review Comment:</label>
+        <textarea id="review" class="form-control" placeholder="Enter review comment"></textarea>
+      </div>
+    </div>
+    <div class="card-footer text-center">
+      <button class="btn btn-primary">Submit Review</button>
+    </div>
+  </div>
+  <div class="card m-3">
+    <div class="card-header h4">
+      Hr Round
+    </div>
+    <div class="card-body">
+      <div class="form-group mt-3">
+        <label for="review">Review Comment:</label>
+        <textarea id="review" class="form-control" placeholder="Enter review comment"></textarea>
+      </div>
+    </div>
+    <div class="card-footer text-center">
+      <button class="btn btn-primary">Submit Review</button>
+    </div>
+  </div>
 </div>
