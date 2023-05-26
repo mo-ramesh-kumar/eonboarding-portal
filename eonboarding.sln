@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eonboarding.Services", "eon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eonboarding.Models", "eonboarding.Models\eonboarding.Models.csproj", "{D1FBAED7-B387-4072-9034-90D524EA3690}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eonboarding-portal-API", "eonboarding-portal-API\eonboarding-portal-API.csproj", "{C0632CFE-C77E-4D08-97D7-7ED97D40A603}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D1FBAED7-B387-4072-9034-90D524EA3690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1FBAED7-B387-4072-9034-90D524EA3690}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1FBAED7-B387-4072-9034-90D524EA3690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0632CFE-C77E-4D08-97D7-7ED97D40A603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0632CFE-C77E-4D08-97D7-7ED97D40A603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0632CFE-C77E-4D08-97D7-7ED97D40A603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0632CFE-C77E-4D08-97D7-7ED97D40A603}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

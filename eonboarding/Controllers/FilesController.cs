@@ -37,7 +37,6 @@ namespace eonboarding.Controllers
         [RequestSizeLimit(100000000)]
         public async Task<IActionResult> Upload()
         {
-           
 
             using (var stream = new FileStream(filePath, FileMode.Create))
             {

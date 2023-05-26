@@ -1,0 +1,137 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using eonboarding_portal_API.Models;
+
+namespace eonboarding_portal_API.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CheckListsController : ControllerBase
+    {
+        private readonly EonboardingContext _context;
+
+        public CheckListsController(EonboardingContext context)
+        {
+            _context = context;
+        }
+
+        // GET: api/CheckLists
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CheckList>>> GetCheckLists()
+        {
+          if (_context.CheckLists == null)
+          {
+              return NotFound();
+          }
+            return await _context.CheckLists.ToListAsync();
+        }
+
+        // GET: api/CheckLists/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CheckList>> GetCheckList(int id)
+        {
+          if (_context.CheckLists == null)
+          {
+              return NotFound();
+          }
+            var checkList = await _context.CheckLists.FindAsync(id);
+
+            if (checkList == null)
+            {
+                return NotFound();
+            }
+
+            return checkList;
+        }
+
+        // PUT: api/CheckLists/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCheckList(int id, CheckList checkList)
+        {
+            if (id != checkList.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(checkList).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CheckListExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        // POST: api/CheckLists
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<CheckList>> PostCheckList(CheckList checkList)
+        {
+          if (_context.CheckLists == null)
+          {
+              return Problem("Entity set 'EonboardingContext.CheckLists'  is null.");
+          }
+            _context.CheckLists.Add(checkList);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (CheckListExists(checkList.Id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return CreatedAtAction("GetCheckList", new { id = checkList.Id }, checkList);
+        }
+
+        // DELETE: api/CheckLists/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCheckList(int id)
+        {
+            if (_context.CheckLists == null)
+            {
+                return NotFound();
+            }
+            var checkList = await _context.CheckLists.FindAsync(id);
+            if (checkList == null)
+            {
+                return NotFound();
+            }
+
+            _context.CheckLists.Remove(checkList);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private bool CheckListExists(int id)
+        {
+            return (_context.CheckLists?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+    }
+}
