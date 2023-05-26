@@ -44,51 +44,52 @@ export class OnboardingChecklistComponent implements OnInit {
       selectedChecklist: [1, 2]
     },
     {
-      id: 1,
+      id: 2,
       name: 'Ramesh',
       selectedChecklist: [1, 2, 3]
     },
     {
-      id: 1,
+      id: 3,
       name: 'Annu',
       selectedChecklist: [1, 2, 3, 4]
     },
     {
-      id: 1,
+      id: 4,
       name: 'Ankit',
       selectedChecklist: [1, 2, 3]
     },
     {
-      id: 1,
+      id: 5,
       name: 'Rupesh',
       selectedChecklist: [1]
     },
     {
-      id: 1,
-      name: 'Rajesh',
+      id: 6,
+      name: 'Amit',
       selectedChecklist: [1, 2]
     },
     {
-      id: 1,
-      name: 'Ramesh',
+      id: 7,
+      name: 'Suresh',
       selectedChecklist: [1, 2, 3]
     },
     {
-      id: 1,
-      name: 'Annu',
+      id: 8,
+      name: 'Pooja',
       selectedChecklist: [1, 2, 3, 4]
     },
     {
-      id: 1,
-      name: 'Ankit',
+      id: 9,
+      name: 'Neha',
       selectedChecklist: [1, 2, 3]
     },
     {
-      id: 1,
-      name: 'Rupesh',
+      id: 10,
+      name: 'Deepak',
       selectedChecklist: [1]
     }
-  ]
+  ];
+  
 
   selectedCandidate: any = this.candidates[0];
 
