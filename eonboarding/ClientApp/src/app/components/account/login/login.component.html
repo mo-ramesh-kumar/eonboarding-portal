@@ -22,7 +22,7 @@
       </div>
       <div *ngIf="isOTPSent" class="form-group">
         <label>OTP:</label>
-        <input type="text" [(ngModel)]="otp" name="otp" required>
+        <input type="password" [(ngModel)]="otp" name="otp" required>
       </div>
       <button type="submit" class="btn-login">Login</button>
       <p *ngIf="error" class="error">{{ error }}</p>

@@ -38,7 +38,7 @@ export class LoginComponent {
   handleLogin() {
     if (this.loginType === 'admin') {
       const adminEmail = 'admin@moback.com';
-      const adminOTP = '1947';
+      const adminOTP = '2023';
 
       if (this.email === adminEmail && this.adminCode === adminOTP) {
         console.log('Admin login successful');
@@ -65,7 +65,7 @@ export class LoginComponent {
     } else if (this.loginType === 'candidate') {
       if (this.isOTPSent && this.otp) {
         const enteredOTP = parseInt(this.otp, 10); // Parse the entered OTP as an integer
-        const candidateOTP = 1947;
+        const candidateOTP = 2023;
         if (enteredOTP === candidateOTP) { // Compare entered OTP with generated OTP
           console.log('Candidate login successful');
           this.AuthService.login(this.email, this.loginType); // Call the login method from AuthService
