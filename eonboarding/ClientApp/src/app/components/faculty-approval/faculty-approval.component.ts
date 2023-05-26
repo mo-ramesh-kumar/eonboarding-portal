@@ -18,6 +18,7 @@ export class FacultyApprovalComponent {
     facultyReview: 'Pending'
   };
 
+  currentRate = 4;
   
   canApprove(stage: string): boolean {
     
