@@ -2,8 +2,9 @@
 
 using eonboarding.DAL;
 using eonboarding.Helpers;
-using eonboarding.Services;
+using eonboarding.Models;
 using eonboarding.Services.Interfaces;
+using eonboarding.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -11,30 +12,21 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+//builder.Services.AddScoped<EonboardingContext, EonboardingContext>();
 
+var connectionString = builder.Configuration.GetConnectionString("WebApiDatabase");
+builder.Services.AddDbContext<EonboardingContext>(x => x.UseSqlServer(connectionString));
+
+builder.Services.AddControllers().AddJsonOptions(x =>
 {
-    var services = builder.Services;
-    var env = builder.Environment;
+// serialize enums as strings in api responses (e.g. Role)
+x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 
-    var connectionString = builder.Configuration.GetConnectionString("WebApiDatabase");
-    builder.Services.AddDbContext<AppDBContext>(x => x.UseSqlServer(connectionString));
-
-    services.AddCors();
-    services.AddControllers().AddJsonOptions(x =>
-    {
-        // serialize enums as strings in api responses (e.g. Role)
-        x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-
-        // ignore omitted parameters on models to enable optional params (e.g. User update)
-        x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
-    });
-
-    services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-    // configure DI for application services
-    services.AddScoped<ICandidateService, CandidateService>();
-}
+// ignore omitted parameters on models to enable optional params (e.g. User update)
+x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+});
 
 
 var app = builder.Build();
@@ -42,9 +34,12 @@ var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
 
 app.UseStaticFiles();
 app.UseRouting();
