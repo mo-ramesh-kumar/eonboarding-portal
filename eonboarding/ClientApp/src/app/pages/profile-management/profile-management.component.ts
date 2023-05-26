@@ -1,89 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CandidateService } from 'src/app/candidate.service';
 
 @Component({
   selector: 'app-profile-management',
   templateUrl: './profile-management.component.html',
   styleUrls: ['./profile-management.component.css']
 })
-export class ProfileManagementComponent {
+export class ProfileManagementComponent implements OnInit {
   profileSearch: string = '';
   showModal = false;
   selectedProfile: any = {};
   isEditable = false;
+  profiles: Array<any> = [];
+  filteredProfiles: any[] = [];
 
-  profiles: Array<any> = [
-    {
-      name: 'Megha Chawdhary',
-      email: 'ravi.kumar@test.com',
-      id: 1
-    },
-    {
-      name: 'Priya Sharma',
-      email: 'priya.sharma@test.com',
-      id: 2
-    },
-    {
-      name: 'Amit Patel',
-      email: 'amit.patel@test.com',
-      id: 3
-    },
-    {
-      name: 'Sneha Verma',
-      email: 'sneha.verma@test.com',
-      id: 4
-    },
-    {
-      name: 'Rajesh Singh',
-      email: 'rajesh.singh@test.com',
-      id: 5
-    }
-  ];
+  constructor(private candidateService: CandidateService) {}
 
-  candidateDetails: any = {
-    name: '',
-    dob: '',
-    nationality: '',
-    gender: '',
-    email: '',
-    phone: '',
-    school: '',
-    schoolPercentage: null,
-    college: '',
-    collegePercentage: null,
-    company: '',
-    technology: '',
-    skills: '',
-    postCollege: '',
-    postCollegePercentage: ''
-  };
-
-  constructor() {
-    this.candidateDetails.name = 'Megha Chawdhary';
-    this.candidateDetails.dob = '1990-05-15';
-    this.candidateDetails.nationality = 'Indian';
-    this.candidateDetails.gender = 'female';
-    this.candidateDetails.email = 'megha.chawdhary@mail.com';
-    this.candidateDetails.phone = '8668699664';
-    this.candidateDetails.school = 'ABC School';
-    this.candidateDetails.schoolPercentage = 80;
-    this.candidateDetails.college = 'XYZ College';
-    this.candidateDetails.collegePercentage = 85;
-    this.candidateDetails.company = 'XYZ Inc.';
-    this.candidateDetails.technology = 'Angular, React, Node.js';
-    this.candidateDetails.skills = 'JavaScript, HTML, CSS';
-    this.candidateDetails.postCollege = 'Sastra University';
-    this.candidateDetails.postCollegePercentage = 80;
+  ngOnInit() {
+    this.getCandidates();
   }
 
-  get filteredProfiles(): Array<any> {
-    if (!this.profileSearch) {
-      return this.profiles;
-    }
-    return this.profiles.filter(
-      (profile) =>
-        profile.name.toLowerCase().includes(this.profileSearch.toLowerCase()) ||
-        profile.email.toLowerCase().includes(this.profileSearch.toLowerCase())
+  getCandidates() {
+    this.candidateService.getCandidates().subscribe(
+      (data) => {
+        this.profiles = data;
+        this.filteredProfiles = data; // Initialize filteredProfiles with all profiles initially
+      },
+      (error) => {
+        console.log('Error fetching candidates:', error);
+      }
     );
+  }
+
+  onProfileSearch() {
+    if (this.profileSearch) {
+      this.filteredProfiles = this.profiles.filter((profile) =>
+        profile.name.toLowerCase().includes(this.profileSearch.toLowerCase())
+      );
+    } else {
+      this.filteredProfiles = this.profiles;
+    }
   }
 
   editProfile(id: number) {
