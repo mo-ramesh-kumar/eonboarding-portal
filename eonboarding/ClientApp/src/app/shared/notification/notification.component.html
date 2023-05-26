@@ -1,13 +1,12 @@
 <div class="notification-container">
-  <div *ngFor="let item of notifications">
-    <ul class="list-group">
-      <li class="list-group-item mb-3 list-group-item-action">        
-        <div class="d-flex w-100 mb-3 justify-content-between">
-          <h5 class="mb-1">{{ item.title }}</h5>
-          <small>3 days ago</small>
-        </div>
-        <p class="mb-1"> {{ item.message }}</p>
-      </li>
-    </ul>
-  </div>
+  <ul class="list-group">
+    <li *ngFor="let item of notifications" class="list-group-item list-group-item-action">        
+      <div class="d-flex w-100 justify-content-between align-items-center">
+        <h5 class="mb-1">{{ item.title }}</h5>
+        <small>3 days ago</small>
+      </div>
+      <p class="mb-1"> {{ item.message }}</p>
+    </li>
+  </ul>
 </div>
+
