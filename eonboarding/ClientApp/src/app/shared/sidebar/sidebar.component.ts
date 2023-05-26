@@ -97,8 +97,8 @@ export class SidebarComponent implements OnInit {
       ]
     },
     {
-      title: 'team-members">',
-      url: '/team-members">',
+      title: 'team-members',
+      url: '/team-members',
       isSelected: false,
       css: 'fas fa-tasks',
       order: 0,
@@ -107,8 +107,8 @@ export class SidebarComponent implements OnInit {
       ]
     },
     {
-      title: 'about-us">',
-      url: '/about-us">',
+      title: 'about-us',
+      url: '/about-us',
       isSelected: false,
       css: 'fas fa-home',
       order: 0,
@@ -117,8 +117,8 @@ export class SidebarComponent implements OnInit {
       ]
     },
     {
-      title: 'Company Culture">',
-      url: '/company-culture">',
+      title: 'Company Culture',
+      url: '/company-culture',
       isSelected: false,
       css: 'fas fa-globe',
       order: 0,

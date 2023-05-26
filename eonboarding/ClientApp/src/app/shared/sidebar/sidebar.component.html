@@ -8,13 +8,13 @@
       </a>
       <ul class="sub-menu">
         <li *ngFor="let subitem of item.subItems">
-          <a [routerLink]="subitem.url" (click)="setNavSelection(subitem)" target="_blank" *ngIf="!subitem.isLink">
-            <i class="{{getIcon(item)}}"></i>
-            <span class="sub-menu-text">Faculty Contract Agreement</span>
+          <a [routerLink]="subitem.url" (click)="setNavSelection(subitem)" *ngIf="!subitem.isLink">
+            <i class="{{getIcon(subitem)}}"></i>
+            <span class="sub-menu-text">{{subitem.title}}</span>
           </a>
           <a [href]="subitem.url" (click)="setNavSelection(subitem)" target="_blank" *ngIf="subitem.isLink" download>
-            <i class="{{getIcon(item)}}"></i>
-            <span class="sub-menu-text">Faculty Contract Agreement</span>
+            <i class="{{getIcon(subitem)}}"></i>
+            <span class="sub-menu-text">{{subitem.title}}</span>
           </a>
         </li>
       </ul>
@@ -28,13 +28,13 @@
       </a>
       <ul class="sub-menu">
         <li *ngFor="let subitem in item.subItems">
-          <a [routerLink]="subitem.url" (click)="setNavSelection(subitem)" target="_blank" download *ngIf="!subitem.isLink">
-            <i class="{{getIcon(item)}}"></i>
-            <span class="sub-menu-text">Faculty Contract Agreement</span>
+          <a [routerLink]="subitem.url" (click)="setNavSelection(subitem)"  *ngIf="!subitem.isLink">
+            <i class="{{getIcon(subitem)}}"></i>
+            <span class="sub-menu-text">{{subitem.title}}</span>
           </a>
-          <a [href]="subitem.url" (click)="setNavSelection(subitem)" target="_blank" download *ngIf="subitem.isLink" download>
-            <i class="{{getIcon(item)}}"></i>
-            <span class="sub-menu-text">Faculty Contract Agreement</span>
+          <a [href]="subitem.url" (click)="setNavSelection(subitem)" target="_blank" *ngIf="subitem.isLink" download>
+            <i class="{{getIcon(subitem)}}"></i>
+            <span class="sub-menu-text">{{subitem.title}}</span>
           </a>
         </li>
       </ul>
