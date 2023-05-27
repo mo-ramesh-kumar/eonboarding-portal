@@ -105,3 +105,10 @@
 <div class="text-center">
     <button (click)="handleSave()" class="btn btn-primary mt-3">Save</button>
 </div>
+<div *ngIf="showPopup" class="popup alert alert-success">
+    <p>Candidate information saved successfully!</p>
+    <div class="button-container">
+        <a routerLink="/onboarding-documents" class="btn btn-primary mr-2">Go to Upload Documents</a>
+        <button (click)="closePopup()" class="btn btn-secondary">Close</button>
+    </div>
+</div>

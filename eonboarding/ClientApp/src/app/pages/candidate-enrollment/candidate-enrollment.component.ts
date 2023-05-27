@@ -11,6 +11,7 @@ export class CandidateEnrollmentComponent {
   resume: File | null = null;
   previewResume: SafeResourceUrl | null = null;
   showPopup = false;
+  loading = false;
 
   candidateDetails: any = {
     name: '',
@@ -32,17 +33,23 @@ export class CandidateEnrollmentComponent {
 
   constructor(private sanitizer: DomSanitizer, private modalService: NgbModal) { }
 
-  handleFileChange(event: any) {
-    const file = event.target.files[0];
+  handleFileChange(event: any): void {
+    const file: File = event.target.files[0];
     this.resume = file;
-    this.previewResume = this.sanitizer.bypassSecurityTrustResourceUrl(URL.createObjectURL(file));
-
-
-    // Resume data extraction (example only, not a complete solution)
-    this.extractResumeData(file);
+  }
+  showLoader(): void {
+    if (this.resume !== null) {
+      this.loading = true;
+  
+      setTimeout(() => {
+        this.previewResume = this.sanitizer.bypassSecurityTrustResourceUrl(URL.createObjectURL(this.resume!));
+        this.extractResumeData(this.resume!);
+        this.loading = false;
+      }, 2000);
+    }
   }
 
-  open(content: any) {
+  open(content: any): void {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
       (result) => {
 
@@ -53,20 +60,16 @@ export class CandidateEnrollmentComponent {
     );
   }
 
-  extractResumeData(file: File) {
-    // Simulated resume data extraction
-    // Replace this code with an actual resume parsing solution
+  extractResumeData(file: File): void {
     const reader = new FileReader();
-    reader.onload = (event: any) => {
-      const resumeData = event.target.result;
+    reader.onload = (event: ProgressEvent<FileReader>) => {
+      const resumeData: any = event.target?.result;
       this.populateFieldsFromResume(resumeData);
     };
     reader.readAsText(file);
   }
 
-  populateFieldsFromResume(resumeData: any) {
-    // Simulated data population (example only, not a complete solution)
-    // Replace this code with your resume parsing logic
+  populateFieldsFromResume(resumeData: any): void {
     this.candidateDetails.name = 'Megha Chawdhary';
     this.candidateDetails.dob = '1990-05-15';
     this.candidateDetails.nationality = 'Indian';
@@ -84,12 +87,11 @@ export class CandidateEnrollmentComponent {
     this.candidateDetails.postCollegePercentage = 80;
   }
 
-  handleSave() {
-    // Perform save operation here (e.g., send data to the server)
+  handleSave(): void {
     this.showPopup = true;
   }
 
-  closePopup() {
+  closePopup(): void {
     this.showPopup = false;
   }
 }

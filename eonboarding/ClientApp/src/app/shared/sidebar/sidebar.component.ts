@@ -38,7 +38,7 @@ export class SidebarComponent implements OnInit {
       order: 0,
       subItems: [
         {
-          title: 'generate-digital-signature',
+          title: 'Generate Digital Signature',
           url: '/generate-digital-signature',
           isSelected: false,
           css: 'fas fa-tasks',
