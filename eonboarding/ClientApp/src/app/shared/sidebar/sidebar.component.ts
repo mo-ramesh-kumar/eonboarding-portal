@@ -142,39 +142,40 @@ export class SidebarComponent implements OnInit {
        
       ]
     },
-    {
-      title: 'Document Center',
-      url: '/document-Center',
-      isSelected: false,
-      css: 'fas fa-file-alt',
-      order: 0,
-      subItems: [
-        {
-          title: 'Faculty Contract Agreement',
-          url: '/assets/documents/Faculty Contract Agreement.pdf',
-          isLink: true,
-          isSelected: false,
-          css: 'fas fa-file-pdf',
-          order: 0,
-        },
-        {
-          title: 'Code of Conduct',
-          url: '/assets/documents/Code of Conduct.pdf',
-          isLink: true,
-          isSelected: false,
-          css: 'fas fa-file-pdf',
-          order: 0,
-        },
-        {
-          title: 'Policies and Procedures Manual',
-          url: '/assets/documents/Policies and Procedures Manual.pdf',
-          isLink: true,
-          isSelected: false,
-          css: 'fas fa-file-pdf',
-          order: 0,
-        }
-      ]
-    }, {
+    // {
+    //   title: 'Document Center',
+    //   url: '/document-Center',
+    //   isSelected: false,
+    //   css: 'fas fa-file-alt',
+    //   order: 0,
+    //   subItems: [
+    //     {
+    //       title: 'Faculty Contract Agreement',
+    //       url: '/assets/documents/Faculty Contract Agreement.pdf',
+    //       isLink: true,
+    //       isSelected: false,
+    //       css: 'fas fa-file-pdf',
+    //       order: 0,
+    //     },
+    //     {
+    //       title: 'Code of Conduct',
+    //       url: '/assets/documents/Code of Conduct.pdf',
+    //       isLink: true,
+    //       isSelected: false,
+    //       css: 'fas fa-file-pdf',
+    //       order: 0,
+    //     },
+    //     {
+    //       title: 'Policies and Procedures Manual',
+    //       url: '/assets/documents/Policies and Procedures Manual.pdf',
+    //       isLink: true,
+    //       isSelected: false,
+    //       css: 'fas fa-file-pdf',
+    //       order: 0,
+    //     }
+    //   ]
+    // }
+     {
       title: 'Admin Center',
       url: '/admin-Center',
       isSelected: false,
@@ -205,14 +206,14 @@ export class SidebarComponent implements OnInit {
           css: 'fas fa-file-signature',
           order: 0,
         },
-        {
-          title: 'Profile Review',
-          url: '/profile-review',
-          isSelected: false,
-          isLink: false,
-          css: 'fas fa-thumbs-up',
-          order: 0,
-        }
+        // {
+        //   title: 'Profile Review',
+        //   url: '/profile-review',
+        //   isSelected: false,
+        //   isLink: false,
+        //   css: 'fas fa-thumbs-up',
+        //   order: 0,
+        // }
       ]
     }    
   ]
