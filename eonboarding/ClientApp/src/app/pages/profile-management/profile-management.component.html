@@ -49,7 +49,10 @@
           </div>
         </div>
         <div>
-           <a [routerLink]="['/your-application']" [queryParams]="{ applicationId: item.id }" class="candidate-link">View Candidates Application</a>
+          <div>
+            <a [routerLink]="['/your-application', loginType]" [queryParams]="{ applicationId: item.id }" class="candidate-link">View Candidates Application</a>
+          </div>
+          
         </div>
         <div class="text-center">
           <button class="btn btn-primary m-3" *ngIf="!isEditable" (click)="editProfile(item.id)">Edit</button>

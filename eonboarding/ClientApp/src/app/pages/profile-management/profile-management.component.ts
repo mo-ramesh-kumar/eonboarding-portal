@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CandidateService } from 'src/app/candidate.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-profile-management',
@@ -13,11 +14,15 @@ export class ProfileManagementComponent implements OnInit {
   isEditable = false;
   profiles: Array<any> = [];
   filteredProfiles: any[] = [];
+  loginType:string = '';
 
-  constructor(private candidateService: CandidateService) {}
+  constructor(private candidateService: CandidateService,private AuthService: AuthService) {}
 
   ngOnInit() {
     this.getCandidates();
+    
+      this.loginType = this.AuthService.getLoginType();
+    
   }
 
   getCandidates() {
