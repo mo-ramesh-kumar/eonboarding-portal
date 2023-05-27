@@ -52,6 +52,11 @@ const routes: Routes = [
   { path: 'onboarding-checklist', component: OnboardingChecklistComponent, canActivate: [AuthGuard] },
   { path: 'candidate-enrollment', component: CandidateEnrollmentComponent, canActivate: [AuthGuard] },
   { path: 'your-application', component: YourApplicationComponent, canActivate: [AuthGuard] },
+  {
+    path: 'your-application/:loginType',
+    component: YourApplicationComponent,
+    canActivate: [AuthGuard], 
+  },
   // { path:'login', component: LoginComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
