@@ -34,7 +34,7 @@ export class SidebarComponent implements OnInit {
       title: 'Document Center',
       url: '/onboarding-documents',
       isSelected: false,
-      css: 'fas fa-chevron-down',
+      css: 'fas fa-file-alt',
       order: 0,
       subItems: [
         {

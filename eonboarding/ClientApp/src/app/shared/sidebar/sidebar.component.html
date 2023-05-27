@@ -25,6 +25,7 @@
       <a [routerLink]="item.url" (click)="setNavSelection(item)" >
         <i class="{{getIcon(item)}}"></i>
         <span class="menu-text">{{item.title}}</span>
+        <i class="fas fa-chevron-down" *ngIf="item.subItems.length"></i>
       </a>
       <ul class="sub-menu">
         <li *ngFor="let subitem of item.subItems">

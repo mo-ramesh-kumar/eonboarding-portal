@@ -32,13 +32,13 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label for="profileDob">Date of Birth:</label>
-              <input type="date" id="profileDob" [(ngModel)]="item.dob" class="form-control" [disabled]="!isEditable">
+              <input type="date" id="profileDob" [(ngModel)]="item.dob" value="23-05-1990" class="form-control" [disabled]="!isEditable" />
             </div>
             <div class="form-group">
               <label for="profileGender">Gender:</label>
               <select id="profileGender" [(ngModel)]="item.gender" class="form-control" [disabled]="!isEditable">
-                <option value="m">Male</option>
-                <option value="f">Female</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
                 <option value="other">Other</option>
               </select>
             </div>
