@@ -9,19 +9,19 @@ import { ChartConfiguration, ChartType } from 'chart.js';
 export class DashboardComponent {
 
   // Doughnut
-  public doughnutChartLabels: string[] = ['Selected', 'Rejected'];
+  public doughnutChartLabels: string[] = ['Rejected','Selected' ];
   public doughnutChartDatasets: ChartConfiguration<'doughnut'>['data']['datasets'] = [
-    { data: [350, 450], label: 'Series A' }
+    { data: [750, 250], label: 'Series A' }
   ];
 
-  public chartGenderLabels: string[] = ['Male', 'Female'];
+  public chartGenderLabels: string[] = ['Female', 'Male'];
   public chartGenderDatasets: ChartConfiguration<'doughnut'>['data']['datasets'] = [
-    { data: [350, 450], label: 'Series A' }
+    { data: [350, 650], label: 'Series A' }
   ];
 
   public chartExperianceLabels: string[] = ['Fresher', '2-5Yrs', '5-10Yrs', '10-12Yrs', '12+Yrs'];
   public chartExperianceDatasets: ChartConfiguration<'doughnut'>['data']['datasets'] = [
-    { data: [350, 450, 100, 350, 450], label: 'Series A' }
+    { data: [150, 250, 300, 200, 100], label: 'Series A' }
   ];
 
   public doughnutChartOptions: ChartConfiguration<'doughnut'>['options'] = {
