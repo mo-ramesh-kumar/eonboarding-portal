@@ -70,7 +70,7 @@ export class SidebarComponent implements OnInit {
       ]
     },
     {
-      title: 'trainings',
+      title: 'Trainings',
       url: '/trainings',
       isSelected: false,
       css: 'fas fa-briefcase',
@@ -80,7 +80,7 @@ export class SidebarComponent implements OnInit {
       ]
     },
     {
-      title: 'benefits',
+      title: 'Benefits',
       url: '/benefits',
       isSelected: false,
       css: 'fas fa-tasks',
@@ -90,17 +90,7 @@ export class SidebarComponent implements OnInit {
       ]
     },
     {
-      title: 'team-members',
-      url: '/team-members',
-      isSelected: false,
-      css: 'fas fa-tasks',
-      order: 0,
-      subItems: [
-       
-      ]
-    },
-    {
-      title: 'about-us',
+      title: 'About Us',
       url: '/about-us',
       isSelected: false,
       css: 'fas fa-home',
@@ -216,7 +206,7 @@ export class SidebarComponent implements OnInit {
           order: 0,
         },
         {
-          title: 'Profile review',
+          title: 'Profile Review',
           url: '/profile-review',
           isSelected: false,
           isLink: false,
