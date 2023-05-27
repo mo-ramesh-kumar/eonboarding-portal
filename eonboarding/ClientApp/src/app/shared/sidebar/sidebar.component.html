@@ -27,7 +27,7 @@
         <span class="menu-text">{{item.title}}</span>
       </a>
       <ul class="sub-menu">
-        <li *ngFor="let subitem in item.subItems">
+        <li *ngFor="let subitem of item.subItems">
           <a [routerLink]="subitem.url" (click)="setNavSelection(subitem)"  *ngIf="!subitem.isLink">
             <i class="{{getIcon(subitem)}}"></i>
             <span class="sub-menu-text">{{subitem.title}}</span>

@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "eonboarding"
+  "defaultProject": "eonboarding",
+  "cli": {
+    "analytics": "b729385f-ee19-43fb-a00e-777449c4557a"
+  }
 }
