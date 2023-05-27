@@ -32,18 +32,11 @@ export class SidebarComponent implements OnInit {
     },
     {
       title: 'Document Center',
-      url: 'Document Center',
+      url: '/onboarding-documents',
       isSelected: false,
       css: 'fas fa-chevron-down',
       order: 0,
       subItems: [
-        {
-          title: 'Onboarding-documents',
-          url: '/onboarding-documents',
-          isSelected: false,
-          css: 'fas fa-file-pdf',
-          order: 0,
-        },
         {
           title: 'generate-digital-signature',
           url: '/generate-digital-signature',
@@ -53,7 +46,7 @@ export class SidebarComponent implements OnInit {
         },
         {
           title: 'Employee NDA',
-          url: '/assets/documents/Employee NDA .pdf',
+          url: '/assets/documents/Employee NDA.pdf',
           isSelected: false,
           css: 'fas fa-file-pdf',
           order: 0,
