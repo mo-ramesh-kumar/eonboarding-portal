@@ -2,17 +2,20 @@
     <h2>Candidate Enrollment</h2>
     <div class="form-group text-center">
         <div class="document-item">
-            <div class="document-details">
-            
-              <p class="text-secondary">Upload Candidate's Resume:</p>
-            </div>
-            <input class="form-control" type="file" (change)="handleFileChange($event)"  accept=".pdf,.jpg,.jpeg,.png" multiple>
+          <div class="document-details">
+            <p class="text-secondary">Upload Candidate's Resume:</p>
           </div>
-        <button *ngIf="!previewResume" class="btn btn-primary mt-3 mr-2" type="button">Upload</button>
-        <button *ngIf="previewResume" class="btn btn-primary mt-3 " type="button"
-            (click)="open(content)">preview</button>
-    </div>
-    <div class="mb-3" *ngIf="previewResume">
+          <input class="form-control" type="file" (change)="handleFileChange($event)" accept=".pdf,.jpg,.jpeg,.png" multiple>
+        </div>
+        <button *ngIf="!previewResume" class="btn btn-primary mt-3 mr-2" type="button" (click)="showLoader()">Upload</button>
+        <button *ngIf="previewResume" class="btn btn-primary mt-3 " type="button" (click)="open(content)">preview</button>
+      </div>
+      <div *ngIf="loading" class="text-center mt-3">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    <div class="mb-3" *ngIf="previewResume && !loading">
         <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
             <ngb-panel>
                 <ng-template ngbPanelTitle>
@@ -59,7 +62,7 @@
             </ngb-panel>
         </ngb-accordion>
     </div>
-    <div class="mb-3" *ngIf="previewResume">
+    <div class="mb-3" *ngIf="previewResume && !loading">
         <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-1">
             <ngb-panel>
                 <ng-template ngbPanelTitle>
@@ -84,7 +87,7 @@
             </ngb-panel>
         </ngb-accordion>
     </div>
-    <div class="mb-3" *ngIf="previewResume">
+    <div class="mb-3" *ngIf="previewResume && !loading">
         <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-2">
             <ngb-panel>
                 <ng-template ngbPanelTitle>
@@ -105,9 +108,9 @@
         </ngb-accordion>
     </div>
 
-    <div class="text-center">
-        <button (click)="handleSave()" *ngIf="previewResume" class="btn btn-primary mt-3">Save</button>
-    </div>
+    <div class="text-center" *ngIf="previewResume && !loading">
+        <button (click)="handleSave()" class="btn btn-primary mt-3">Save</button>
+      </div>
 
     <div *ngIf="showPopup" class="popup alert alert-success">
         <p>Candidate information saved successfully!</p>

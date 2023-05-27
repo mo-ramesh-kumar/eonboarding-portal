@@ -23,6 +23,7 @@ export class YourApplicationComponent implements OnInit {
     postCollege: '',
     postCollegePercentage: ''
   };
+  showPopup = false;
   constructor() { }
   candidate = {
     editingProfile: true,
@@ -54,6 +55,10 @@ export class YourApplicationComponent implements OnInit {
   }
 
   handleSave(){
-    
+    this.showPopup = true;
+  }
+  
+  closePopup(): void {
+    this.showPopup = false;
   }
 }
