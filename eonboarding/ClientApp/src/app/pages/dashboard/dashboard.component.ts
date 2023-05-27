@@ -53,8 +53,8 @@ export class DashboardComponent {
     },
     {
       id:1,
-      name: 'Amit Sharma',
-      position: 'UI Designer',
+      name: 'Amar Kumar',
+      position: 'UX/UI',
       email: 'amit.sharma@example.com',
       status: 'HR'
     },

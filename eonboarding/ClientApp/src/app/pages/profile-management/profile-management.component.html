@@ -24,16 +24,17 @@
               <label for="profileEmail">Email:</label>
               <input type="email" id="profileEmail" [(ngModel)]="item.email" class="form-control" [disabled]="!isEditable">
             </div>
+           
+          </div>
+          <div class="col-lg-6">
             <div class="form-group">
               <label for="profilePhone">Phone:</label>
               <input type="tel" id="profilePhone" [(ngModel)]="item.phone" class="form-control" [disabled]="!isEditable">
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="profileDob">Date of Birth:</label>
               <input type="date" id="profileDob" [(ngModel)]="item.dob" value="23-05-1990" class="form-control" [disabled]="!isEditable" />
-            </div>
+            </div> -->
             <div class="form-group">
               <label for="profileGender">Gender:</label>
               <select id="profileGender" [(ngModel)]="item.gender" class="form-control" [disabled]="!isEditable">
